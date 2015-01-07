@@ -49,8 +49,4 @@ output <- List_of_SubMarkets(url, output)
 output <- paste("http://www.betfair.com",unlist(output), sep = "")
 
 
-write(output, "list_of_Betfair_UKPolitics_Markets.txt")
-
-
-
-output
+write(output, "../data/list_of_Betfair_UKPolitics_Markets.txt")

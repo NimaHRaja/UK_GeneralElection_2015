@@ -1,5 +1,5 @@
 # Load Raw Data
-all_odds_data <- read.table("../Betfair_UKPolitics_odds.csv", 
+all_odds_data <- read.table("../data/Betfair_UKPolitics_odds.csv", 
                             sep = "\t"
                             , stringsAsFactor = FALSE)
 names(all_odds_data) <- 
@@ -53,7 +53,7 @@ table(as.data.frame(test_table)$Freq)
 
 
 write.csv(Betfair_UKPolitics_Odds_History, 
-            "Betfair_UKPolitics_Odds_History.csv",
+            "../Betfair_UKPolitics_Odds_History.csv",
           row.names = FALSE)
 
 
