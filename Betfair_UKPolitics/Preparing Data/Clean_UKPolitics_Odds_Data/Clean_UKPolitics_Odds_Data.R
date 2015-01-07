@@ -53,7 +53,7 @@ table(as.data.frame(test_table)$Freq)
 
 
 write.csv(Betfair_UKPolitics_Odds_History, 
-            "../Betfair_UKPolitics_Odds_History.csv",
+            "../../Betfair_UKPolitics_Odds_History.csv",
           row.names = FALSE)
 
 
