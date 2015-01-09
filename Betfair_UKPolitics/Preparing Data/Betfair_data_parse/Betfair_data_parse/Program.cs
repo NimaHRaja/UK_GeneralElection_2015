@@ -60,6 +60,17 @@ namespace Betfair_data_parse
 
                             Console.WriteLine(title + "\t" + i);
 
+
+
+                            HtmlNode matched_node = html_doc.DocumentNode.SelectSingleNode(@"//span[@class = 'total-matched-val']");
+                            string matched = matched_node.InnerText.Trim();
+                            matched = matched.Replace("GBP ", "");
+                            matched = matched.Replace(",", "");
+
+                            // Console.WriteLine(matched_node.InnerText.Trim());
+                            SW.WriteLine(title + "\tmatched\t" + matched + "\t\t\t" + now);
+
+
                             foreach (HtmlNode possible_outcome_slice in html_doc.DocumentNode.SelectNodes(@"//tr[@data-handicap='0']"))
                             {
                                 HtmlDocument possible_outcome = new HtmlDocument();
