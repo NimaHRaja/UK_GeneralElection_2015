@@ -9,6 +9,7 @@ names(all_odds_data) <-
 # Subset data to back and lay
 all_back_data <- subset(all_odds_data, all_odds_data$"back/lay" == "back")
 all_lay_data <- subset(all_odds_data, all_odds_data$"back/lay" == "lay")
+all_matched_data <- subset(all_odds_data, all_odds_data$"back/lay" == "matched")
 
 
 # find max (min) avaiable back(lay) odds
@@ -34,21 +35,36 @@ Betfair_UKPolitics_Odds_History <-
           by = c("Group.1", "Group.2", "Group.3"))
 
 names(Betfair_UKPolitics_Odds_History) <- 
-    c("Market", "Outcome", "Date_Char", "Back", "Lay")
+    c("Market", "Outcome", "date_char", "Back", "Lay")
+
+
+names(Betfair_UKPolitics_Odds_History)
+names(all_matched_data)
+
+Betfair_UKPolitics_Odds_History <- 
+merge(Betfair_UKPolitics_Odds_History, all_matched_data, 
+      all = TRUE, by = c("Market",  "date_char"))
+
+Betfair_UKPolitics_Odds_History <- Betfair_UKPolitics_Odds_History[,c(1:5,7)]
+names(Betfair_UKPolitics_Odds_History) <- 
+    c("Market", "date_char", "Outcome", "Back", "Lay", "Matched")
+
 
 
 # Test Output
 
-test_table <- table(
-    Betfair_UKPolitics_Odds_History$Market, 
-    Betfair_UKPolitics_Odds_History$Outcome)
-
-table(as.data.frame(test_table)$Freq)
+# test_table <- table(
+#     Betfair_UKPolitics_Odds_History$Market, 
+#     Betfair_UKPolitics_Odds_History$Outcome)
+# 
+# table(as.data.frame(test_table)$Freq)
 
 # Output should only consist of 0 and number of times the odds were retrieved.
 
+# P.S I was wrong. This is not a good test. commented out.
 
 # Write output
+
 
 
 
