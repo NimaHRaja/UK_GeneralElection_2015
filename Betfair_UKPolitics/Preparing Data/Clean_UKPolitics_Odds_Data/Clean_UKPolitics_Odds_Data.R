@@ -63,6 +63,34 @@ names(Betfair_UKPolitics_Odds_History) <-
 
 # P.S I was wrong. This is not a good test. commented out.
 
+
+
+
+# Load  Data
+
+
+# library(data.table)
+# DT_all_odds_data <- data.table(Betfair_UKPolitics_Odds_History)[,.N,by=list(Market, Outcome)]
+# 
+# test1_DT <- DT_all_odds_data[,list(min(N),max(N)), by = "Market"]
+# 
+# 
+# View(test1_DT[test1_DT$V1 != test1_DT$V2])
+# 
+# 
+# View(Betfair_UKPolitics_Odds_History[Betfair_UKPolitics_Odds_History$Market == 'Bristol West - Bristol West - Winner',])
+# 
+# View(Betfair_UKPolitics_Odds_History[rowSums(is.na(Betfair_UKPolitics_Odds_History[,3:5])) == 3,])
+# 
+# 
+# 
+# View(Betfair_UKPolitics_Odds_History[is.na(Betfair_UKPolitics_Odds_History$Outcome),])
+# 
+
+Betfair_UKPolitics_Odds_History <- 
+Betfair_UKPolitics_Odds_History[!is.na(Betfair_UKPolitics_Odds_History$Outcome),]
+
+
 # Write output
 
 
