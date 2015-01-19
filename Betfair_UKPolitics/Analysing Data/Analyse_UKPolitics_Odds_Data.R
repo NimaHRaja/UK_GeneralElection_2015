@@ -13,6 +13,15 @@ major_markets <-
 major_markets_data <- all_odds_data[all_odds_data$Market %in% major_markets,]
 
 
+
+uu <- major_markets_data[major_markets_data$Market == "2015 UK General Election - Overall Majority",]
+
+ibrary(ggplot2)
+qplot(strptime(uu$date_char, "%d/%m/%Y %H:%M:%s"), 1/uu$Back, col = uu$Outcome)
+
+
+
+
 test_data <- major_markets_data[c(203,201,204,202),3:5]
 row.names(test_data) <- NULL
 
@@ -50,7 +59,7 @@ get_chull <- function(data){
     points <- rbind(points, points3)
     
     
-  
+    
     points
     
 }
@@ -60,3 +69,53 @@ get_chull <- function(data){
 
 points <- get_chull(test_data)
 row.names(points ) <- NULL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+major_markets <- 
+    unique(all_odds_data[all_odds_data$Matched>10000 & !is.na(all_odds_data$Matched),]$Market)
+
+
+
+major_markets_data <- all_odds_data[all_odds_data$Market %in% major_markets,]
+
+
+
+uu <- major_markets_data[major_markets_data$Market == "2015 UK General Election - Overall Majority",]
+
+uu$date <- strptime(uu$date_char, "%d/%m/%Y %H:%M:%s")
+
+library(ggplot2)
+
+ggplot(uu, aes(x = date, y = 100/Back, color = Outcome)) + 
+    geom_line() +
+    ylab("(implied) probability (%)") +     
+    labs(title = "Betfair's (implied) probability of GE15 Outcomes")
+    
+    
+    
+    + 
+    qplot(, 1/uu$Back, col = uu$Outcome)
+
+
+
+
+
