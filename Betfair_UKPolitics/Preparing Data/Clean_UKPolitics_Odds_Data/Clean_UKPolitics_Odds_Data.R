@@ -1,4 +1,4 @@
-####################### Load Raw Data 
+# Load Raw Data 
 
 all_odds_data <- read.table("../data/Betfair_UKPolitics_odds.csv", 
                             sep = "\t"
@@ -7,139 +7,38 @@ names(all_odds_data) <-
     c("Market", "back/lay", "Outcome", "odds", "size", "date_char")
 
 
-####################### Clean Market Names -1
-
-# unique_market_names <- 
-#     unique(
-#         all_odds_data[
-#             !grepl('Winner',all_odds_data$Market),
-#             "Market"])
-# 
-# unique_market_names[order(unique_market_names)]
-# 
-# unique_market_names[
-#     substr(
-#         unique_market_names, 
-#         nchar(unique_market_names), 
-#         nchar(unique_market_names)) 
-#     == " "]
+market_names_replacements <- read.table("Market_Names_Replacements.csv", 
+                            sep = "\t"
+                            , stringsAsFactor = FALSE)
 
 
 
-all_odds_data$Market <- 
-    gsub("Next UK General Election - Most Seats ", 
-         "Next UK General Election - Most Seats",
-         all_odds_data$Market)
+# Clean Market Names
 
-all_odds_data$Market <- 
-    gsub("Next UK General Election - Overall Majority ", 
-         "Next UK General Election - Overall Majority",
-         all_odds_data$Market)
+paste('Tot_Markets_Before = ', length(unique(all_odds_data$Market)))
 
-all_odds_data$Market <- 
-    gsub("Next UK General Election - UKIP Seats ", 
-         "Next UK General Election - UKIP Seats",
-         all_odds_data$Market)
+for (i in 1:dim(market_names_replacements)[1]){
+    all_odds_data$Market <- gsub(market_names_replacements[i,1],
+                                 market_names_replacements[i,2],
+                                 all_odds_data$Market)
+    
+  #  print(length(unique(all_odds_data$Market)))
+}
 
-
-
-# unique_market_names <- 
-#     unique(
-#         all_odds_data[
-#             !grepl('Winner',all_odds_data$Market),
-#             "Market"])
-# 
-# unique_market_names[order(unique_market_names)]
-
-
-
-
-####################### Clean Market Names -2
-
-# unique_market_names <- 
-#     unique(
-#         all_odds_data[
-#             !grepl('Winner',all_odds_data$Market),
-#             "Market"])
-# 
-# unique_market_names[order(unique_market_names)]
-# 
-# 
-# 
-# unique(
-#     all_odds_data[
-#         all_odds_data$Market == 
-#             "2015 Prime Minister after Cameron - Prime Minister after Cameron",
-#         "date_char"])
-# 
-# unique(
-#     all_odds_data[
-#         all_odds_data$Market == 
-#             "Prime Minister after Cameron - Prime Minister after Cameron",
-#         "date_char"])
-# 
-# unique(
-#     all_odds_data[
-#         all_odds_data$Market == 
-#             "UK Seat Totals - UKIP Seats Total",
-#         "date_char"])
-# 
-# unique(
-#     all_odds_data[
-#         all_odds_data$Market == 
-#             "Next UK General Election - UKIP Seats",
-#         "date_char"])
-
-
-
-all_odds_data$Market <- 
-    gsub("2015 Prime Minister after Cameron - Prime Minister after Cameron",
-         "Prime Minister after Cameron - Prime Minister after Cameron",
-         all_odds_data$Market)
-
-
-all_odds_data$Market <- 
-    gsub("Next UK General Election - Most Seats", 
-         "2015 UK General Election - Most Seats",
-         all_odds_data$Market)
-
-
-all_odds_data$Market <- 
-    gsub("Next UK General Election - Overall Majority", 
-         "2015 UK General Election - Overall Majority",
-         all_odds_data$Market)
-
-
-all_odds_data$Market <- 
-    gsub("Next UK General Election - UKIP Seats", 
-         "UK Seat Totals - UKIP Seats Total",
-         all_odds_data$Market)
-
-
-
-
-# unique_market_names <- 
-#     unique(
-#         all_odds_data[
-#             !grepl('Winner',all_odds_data$Market),
-#             "Market"])
-# 
-# 
-# unique_market_names[order(unique_market_names)]
-
-
+paste('Tot_Markets_After = ', length(unique(all_odds_data$Market)))
 
 
 
 # Subset data to back and lay
+
 all_back_data <- subset(all_odds_data, all_odds_data$"back/lay" == "back")
 all_lay_data <- subset(all_odds_data, all_odds_data$"back/lay" == "lay")
 all_matched_data <- subset(all_odds_data, all_odds_data$"back/lay" == "matched")
 
 
 
-
 # find max (min) avaiable back(lay) odds
+
 agg_back <-
     aggregate(all_back_data$odds, 
               by=list(all_back_data$Market,
@@ -179,42 +78,6 @@ names(Betfair_UKPolitics_Odds_History) <-
 
 
 
-# Test Output
-
-# test_table <- table(
-#     Betfair_UKPolitics_Odds_History$Market, 
-#     Betfair_UKPolitics_Odds_History$Outcome)
-# 
-# table(as.data.frame(test_table)$Freq)
-
-# Output should only consist of 0 and number of times the odds were retrieved.
-
-# P.S I was wrong. This is not a good test. commented out.
-
-
-
-
-# Load  Data
-
-
-# library(data.table)
-# DT_all_odds_data <- data.table(Betfair_UKPolitics_Odds_History)[,.N,by=list(Market, Outcome)]
-# 
-# test1_DT <- DT_all_odds_data[,list(min(N),max(N)), by = "Market"]
-# 
-# 
-# View(test1_DT[test1_DT$V1 != test1_DT$V2])
-# 
-# 
-# View(Betfair_UKPolitics_Odds_History[Betfair_UKPolitics_Odds_History$Market == 'Bristol West - Bristol West - Winner',])
-# 
-# View(Betfair_UKPolitics_Odds_History[rowSums(is.na(Betfair_UKPolitics_Odds_History[,3:5])) == 3,])
-# 
-# 
-# 
-# View(Betfair_UKPolitics_Odds_History[is.na(Betfair_UKPolitics_Odds_History$Outcome),])
-# 
-
 Betfair_UKPolitics_Odds_History <- 
     Betfair_UKPolitics_Odds_History[!is.na(Betfair_UKPolitics_Odds_History$Outcome),]
 
@@ -223,10 +86,9 @@ Betfair_UKPolitics_Odds_History <-
 
 
 
-# 
-# write.csv(Betfair_UKPolitics_Odds_History, 
-#             "../../Betfair_UKPolitics_Odds_History.csv",
-#           row.names = FALSE)
-# 
+
+write.csv(Betfair_UKPolitics_Odds_History, 
+            "../../Betfair_UKPolitics_Odds_History.csv",
+          row.names = FALSE)
 
 
