@@ -33,11 +33,14 @@ and for each combination of Market/outcome/time finds the best available odds (b
 
 and saves the output in *Betfair_UKPolitics_Odds_History.csv*.
 
+*Clean_UKPolitics_Odds_Data_Tests* tests */data/Betfair_UKPolitics_odds.csv*, looking for inconsistencies, duplicates, ...
+
 Betfair_UKPolitics_Odds_History.csv
 -----------------------------------
-Output file with 5 columns:
+Output file with 6 columns:
 - Market 
 - Outcome
 - Date_char
 - Back
 - Lay
+- Matched

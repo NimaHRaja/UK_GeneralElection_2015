@@ -7,13 +7,13 @@ names(all_odds_data) <-
     c("Market", "back/lay", "Outcome", "odds", "size", "date_char")
 
 
-market_names_replacements <- read.table("Market_Names_Replacements.csv", 
-                            sep = "\t"
-                            , stringsAsFactor = FALSE)
-
-
-
+################################################################################
 # Clean Market Names
+
+market_names_replacements <- read.table("../data/Market_Names_Replacements.csv", 
+                                        sep = "\t", 
+                                        stringsAsFactor = FALSE)
+
 
 paste('Tot_Markets_Before = ', length(unique(all_odds_data$Market)))
 
@@ -22,13 +22,13 @@ for (i in 1:dim(market_names_replacements)[1]){
                                  market_names_replacements[i,2],
                                  all_odds_data$Market)
     
-  #  print(length(unique(all_odds_data$Market)))
+    #  print(length(unique(all_odds_data$Market)))
 }
 
 paste('Tot_Markets_After = ', length(unique(all_odds_data$Market)))
 
 
-
+################################################################################
 # Subset data to back and lay
 
 all_back_data <- subset(all_odds_data, all_odds_data$"back/lay" == "back")
@@ -36,7 +36,7 @@ all_lay_data <- subset(all_odds_data, all_odds_data$"back/lay" == "lay")
 all_matched_data <- subset(all_odds_data, all_odds_data$"back/lay" == "matched")
 
 
-
+################################################################################
 # find max (min) avaiable back(lay) odds
 
 agg_back <-
@@ -54,8 +54,8 @@ agg_lay <-
               FUN=min)
 
 
-
-# Create output
+################################################################################
+# Merge back, lay and matched
 
 Betfair_UKPolitics_Odds_History <- 
     merge(agg_back, agg_lay, all = TRUE, 
@@ -64,9 +64,6 @@ Betfair_UKPolitics_Odds_History <-
 names(Betfair_UKPolitics_Odds_History) <- 
     c("Market", "Outcome", "date_char", "Back", "Lay")
 
-
-names(Betfair_UKPolitics_Odds_History)
-names(all_matched_data)
 
 Betfair_UKPolitics_Odds_History <- 
     merge(Betfair_UKPolitics_Odds_History, all_matched_data, 
@@ -78,17 +75,15 @@ names(Betfair_UKPolitics_Odds_History) <-
 
 
 
-Betfair_UKPolitics_Odds_History <- 
-    Betfair_UKPolitics_Odds_History[!is.na(Betfair_UKPolitics_Odds_History$Outcome),]
+# Betfair_UKPolitics_Odds_History <- 
+#     Betfair_UKPolitics_Odds_History[
+#         !is.na(Betfair_UKPolitics_Odds_History$Outcome),]
 
 
-# Write output
-
-
-
+################################################################################
+# Write to file
 
 write.csv(Betfair_UKPolitics_Odds_History, 
-            "../../Betfair_UKPolitics_Odds_History.csv",
+          "../../Betfair_UKPolitics_Odds_History.csv",
           row.names = FALSE)
-
 
