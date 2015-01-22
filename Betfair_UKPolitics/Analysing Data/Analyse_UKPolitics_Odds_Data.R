@@ -3,72 +3,134 @@ all_odds_data <- read.table("../Betfair_UKPolitics_Odds_History.csv",
                             sep = ",", header = TRUE
                             , stringsAsFactor = FALSE)
 
+all_odds_data$date <- 
+    strptime(all_odds_data$date_char, "%d/%m/%Y %H:%M:%s")
 
+# Find Major Markets
 
-major_markets <- 
-    unique(all_odds_data[all_odds_data$Matched>10000 & !is.na(all_odds_data$Matched),]$Market)
+max_matched <- 
+    data.frame(
+        tapply(
+            all_odds_data$Matched, 
+            factor(all_odds_data$Market), 
+            max, na.rm = TRUE))
 
+max_matched$Market <- row.names(max_matched)
+row.names(max_matched) <- NULL
+names(max_matched)[1] <- "Matched"
 
-
-major_markets_data <- all_odds_data[all_odds_data$Market %in% major_markets,]
-
-
-
-uu <- major_markets_data[major_markets_data$Market == "2015 UK General Election - Overall Majority",]
-
-ibrary(ggplot2)
-qplot(strptime(uu$date_char, "%d/%m/%Y %H:%M:%s"), 1/uu$Back, col = uu$Outcome)
-
-
-
-
-test_data <- major_markets_data[c(203,201,204,202),3:5]
-row.names(test_data) <- NULL
-
-test_data[1,2:3] <- 1/(1/test_data[1,2:3] + 1/test_data[3,2:3])
-
-test_data <- test_data[c(1,2,4),]
+View(max_matched[order(-max_matched$Matched),])
 
 
 
+# Find Major constituency Markets
 
-get_chull <- function(data){
-    
-    get_possible_points <- function(prob){
-        
-        
-        points <- expand.grid(unlist(prob[1,]), unlist(prob[2,]))
-        
-        points <- cbind(points, Var3 = (1- rowSums(points)))
-        
-        points[(points[, 3] < prob[3,1]) & (points[, 3] > prob[3,2]),]
-        
-    }
-    
-    prob <- 1/test_data[,2:3]
-    points <- get_possible_points(prob)
-    
-    
-    points2 <- get_possible_points(prob[c(1,3,2),])
-    names(points2) <- c("Var1", "Var3", "Var2")
-    points <- rbind(points, points2)
-    
-    
-    points3 <- get_possible_points(prob[c(3,2,1),])
-    names(points3) <- c("Var3", "Var2", "Var1")
-    points <- rbind(points, points3)
-    
-    
-    
-    points
-    
-}
+max_matched_constituencies <- 
+    max_matched[grepl('Winner', max_matched$Market),]
+
+
+View(max_matched_constituencies[order(-max_matched_constituencies$Matched),])
+
+View(subset(all_odds_data, Market == "South Thanet - South Thanet - Winner"))
+View(subset(all_odds_data, Market == "Brighton Pavilion - Brighton Pavilion - Winner"))
+View(subset(all_odds_data, Market == "Hendon - Hendon - Winner"))
 
 
 
 
-points <- get_chull(test_data)
-row.names(points ) <- NULL
+# 2015 UK General Election - Most Seats
+
+data_most_seats <- 
+    subset(all_odds_data, 
+           Market == "2015 UK General Election - Most Seats")
+
+
+qplot(date, 1/Back, col = Outcome, data = data_most_seats, ylab = "Prob (%)")
+
+
+# 2015 UK General Election - Overall Majority
+
+data_majority <- 
+    subset(all_odds_data, 
+           Market == "2015 UK General Election - Overall Majority")
+
+
+qplot(date, 1/Back, col = Outcome, data = data_majority, ylab = "Prob (%)")
+
+
+
+data_majority_latest <- 
+    subset(data_majority, date == max(data_majority$date))
+
+data_majority_latest <- 
+    data_majority_latest[order(Outcome),]
+
+data_majority_latest[4, c("Back", "Lay")] <- 
+    1/colSums(1/data_majority_latest[c(1,4),c("Back", "Lay")])
+
+data_majority_latest <- 
+    data_majority_latest[2:4, c("Outcome", "Back", "Lay")]
+
+row.names(data_majority_latest) <- NULL
+
+
+
+source("get_convex_hull.R")
+
+tri_graph_data_majority_latest <- get_convex_hull(data_majority_latest)
+
+names(tri_graph_data_majority_latest) <- c("CON", "LAB", "NO")
+row.names(tri_graph_data_majority_latest) <- NULL 
+
+
+
+#library(ggtern)
+
+ggtern(data = tri_graph_data_majority_latest, 
+       aes(x = CON, y = LAB, z = NO)) + 
+    geom_point(color = "yellow", size = 6) +
+    ggtitle("Prob_Majority") +
+    theme_tern_rgbg()
+
+
+
+# UK Seat Totals - UKIP Seats Total
+
+data_UKIP_seats <- 
+    subset(all_odds_data, 
+           Market == "UK Seat Totals - UKIP Seats Total")
+
+
+qplot(date, 1/Back, col = Outcome, data = data_UKIP_seats, ylab = "Prob (%)")
+
+
+
+data_UKIP_seats_latest <- 
+    subset(data_UKIP_seats, date == max(data_majority$date))
+
+data_UKIP_seats_latest <- 
+    data_UKIP_seats_latest[, c("Outcome", "Back", "Lay")]
+
+row.names(data_UKIP_seats_latest) <- NULL
+
+
+
+#source("get_convex_hull.R")
+
+tri_graph_data_UKIP_seats_latest <- get_convex_hull(data_UKIP_seats_latest)
+
+names(tri_graph_data_UKIP_seats_latest) <- c("OneToFive", "OverFive", "None")
+row.names(tri_graph_data_UKIP_seats_latest) <- NULL 
+
+
+
+#library(ggtern)
+
+ggtern(data = tri_graph_data_UKIP_seats_latest, 
+       aes(x = OneToFive, y = OverFive, z = None)) + 
+    geom_point(color = "yellow", size = 6) +
+    ggtitle("Prob_Majority") +
+    theme_tern_rgbg()
 
 
 
@@ -77,43 +139,6 @@ row.names(points ) <- NULL
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-major_markets <- 
-    unique(all_odds_data[all_odds_data$Matched>10000 & !is.na(all_odds_data$Matched),]$Market)
-
-
-
-major_markets_data <- all_odds_data[all_odds_data$Market %in% major_markets,]
-
-
-
-uu <- major_markets_data[major_markets_data$Market == "2015 UK General Election - Overall Majority",]
-
-uu$date <- strptime(uu$date_char, "%d/%m/%Y %H:%M:%s")
-
-library(ggplot2)
-
-ggplot(uu, aes(x = date, y = 100/Back, color = Outcome)) + 
-    geom_line() +
-    ylab("(implied) probability (%)") +     
-    labs(title = "Betfair's (implied) probability of GE15 Outcomes")
-    
-    
-    
-    + 
-    qplot(, 1/uu$Back, col = uu$Outcome)
 
 
 
