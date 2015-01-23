@@ -106,7 +106,7 @@ qplot(date, 1/Back, col = Outcome, data = data_UKIP_seats, ylab = "Prob (%)")
 
 
 data_UKIP_seats_latest <- 
-    subset(data_UKIP_seats, date == max(data_majority$date))
+    subset(data_UKIP_seats, date_char == max(data_UKIP_seats$date))
 
 data_UKIP_seats_latest <- 
     data_UKIP_seats_latest[, c("Outcome", "Back", "Lay")]
@@ -114,31 +114,12 @@ data_UKIP_seats_latest <-
 row.names(data_UKIP_seats_latest) <- NULL
 
 
-
-#source("get_convex_hull.R")
+source("get_convex_hull.R")
 
 tri_graph_data_UKIP_seats_latest <- get_convex_hull(data_UKIP_seats_latest)
 
 names(tri_graph_data_UKIP_seats_latest) <- c("OneToFive", "OverFive", "None")
 row.names(tri_graph_data_UKIP_seats_latest) <- NULL 
-
-
-
-#library(ggtern)
-
-ggtern(data = tri_graph_data_UKIP_seats_latest, 
-       aes(x = OneToFive, y = OverFive, z = None)) + 
-    geom_point(color = "yellow", size = 6) +
-    ggtitle("Prob_Majority") +
-    theme_tern_rgbg()
-
-
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,16 @@
+Get_Ternary_Diagram <- function(data, labels, title){
+    
+    tri_data <- Get_Convex_Hull(data)
+    row.names(tri_data) <- NULL 
+    
+    
+    graph <- 
+        ggtern(data = tri_data, 
+               aes(x = Var1, y = Var2, z = Var3)) + 
+        geom_point(color = "Green", size = 3) +
+        ggtitle(title) +
+        labs(x = labels[1], y = labels[2], z = labels[3]) +
+        theme_tern_rgbg()
+    
+    graph
+}

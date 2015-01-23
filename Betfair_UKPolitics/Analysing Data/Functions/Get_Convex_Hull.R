@@ -1,4 +1,4 @@
-get_convex_hull <- function(data){
+Get_Convex_Hull <- function(data){
     
     get_possible_points <- function(prob){
         
