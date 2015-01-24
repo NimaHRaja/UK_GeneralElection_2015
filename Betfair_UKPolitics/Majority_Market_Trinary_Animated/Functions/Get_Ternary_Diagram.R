@@ -7,10 +7,12 @@ Get_Ternary_Diagram <- function(data, labels, title){
     graph <- 
         ggtern(data = tri_data, 
                aes(x = Var1, y = Var2, z = Var3)) + 
-        geom_point(color = "Green", size = 3) +
+        geom_point(color = "Green", size = 8) +
         ggtitle(title) +
         labs(x = labels[1], y = labels[2], z = labels[3]) +
-        theme_tern_rgbg()
+        theme_tern_rgbg() +
+        theme(plot.title = element_text(size = rel(2)))
     
     graph
 }
+

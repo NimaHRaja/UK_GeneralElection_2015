@@ -12,6 +12,7 @@ all_odds_data$date <-
 
 library(ggplot2)
 library(ggtern)
+library(reshape2)
 source("Functions/Get_Convex_Hull.R")
 source("Functions/Get_Ternary_Diagram.R")
 
@@ -26,11 +27,49 @@ data_majority <-
 data_majority <- 
     subset(data_majority, date >= strptime("01/09/2014", "%d/%m/%Y"))
 
+row.names(data_majority) <- NULL
 
 data_majority_dates <- unique(data_majority$date)
 data_majority_dates <- data_majority_dates[order(data_majority_dates)]
 
 
+# output -> subset data
+
+data_majority_output <- 
+    melt(data_majority, 
+         id.vars = c("date_char", "Outcome"), 
+         measure.vars = c("Back", "Lay"))
+
+data_majority_output$Outcome <- 
+    paste(
+        data_majority_output$Outcome, 
+        data_majority_output$variable, 
+        sep = "_")
+
+data_majority_output <- data_majority_output[, c(1,2,4)]
+
+data_majority_output <- 
+    dcast(data_majority_output, date_char ~ Outcome)
+
+data_majority_output <- 
+    data_majority_output[
+        order(
+            strptime(data_majority_output$date_char, "%d/%m/%Y %H:%M:%s")),]
+
+row.names(data_majority_output) <- NULL
+
+write.csv(data_majority_output, "Majority_Market_Trinary.csv")
+
+
+png("Majority_Market.png", width = 800, height = 400)
+
+qplot(date, 
+      100/Back, 
+      data = data_majority, 
+      color = Outcome, 
+      ylab = "(implied) probability (%)")
+
+dev.off()
 
 # Create plots
 
@@ -50,7 +89,7 @@ for(i in seq_along(data_majority_dates))
     data_majority_latest <- 
         data_majority_latest[2:4, c("Outcome", "Back", "Lay")]
     
-    row.names(data_majority_latest) <- NULL
+    #    row.names(data_majority_latest) <- NULL
     labels <- c("CON", "LAB", "NO")
     
     ter_graph <- 
