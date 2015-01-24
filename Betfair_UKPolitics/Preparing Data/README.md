@@ -35,7 +35,7 @@ and saves the output in *Betfair_UKPolitics_Odds_History.csv*.
 
 *Clean_UKPolitics_Odds_Data_Tests* tests */data/Betfair_UKPolitics_odds.csv*, looking for inconsistencies, duplicates, ...
 
-Betfair_UKPolitics_Odds_History.csv
+../Betfair_UKPolitics_Odds_History.csv
 -----------------------------------
 Output file with 6 columns:
 - Market 
