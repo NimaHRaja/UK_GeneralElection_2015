@@ -99,7 +99,7 @@ for(i in seq_along(data_majority_dates))
             strftime(data_majority_dates[i], "%d %b"))
     
     
-    png(paste("plots/",i, ".png", sep = ""))
+    png(paste("plots/",i, ".png", sep = ""), width = 640, height = 640)
     print(ter_graph)
     dev.off()
 }
