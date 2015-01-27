@@ -1,22 +1,15 @@
-# Load  Data
+# Load  Data, Source Functions, and Load Libraries
 
-all_odds_data <- read.table("../Betfair_UKPolitics_Odds_History.csv", 
-                            sep = ",", header = TRUE
-                            , stringsAsFactor = FALSE)
-
-all_odds_data$date <- 
-    strptime(all_odds_data$date_char, "%d/%m/%Y %H:%M:%s")
-
-
-# Libraries and Functions
-
-library(ggplot2)
-library(ggtern)
-library(reshape2)
-source("Functions/Get_Convex_Hull.R")
-source("Functions/Get_Ternary_Diagram.R")
+source("../General_Functions/Load_data.R")
+source("../General_Functions/Load_Libraries.R")
+source("../General_Functions/Get_Convex_Hull.R")
+source("../General_Functions/Get_Ternary_Diagram.R")
+source("../General_Functions/Get_3Way_Odds.R")
+Load_Libraries(c("ggplot2", "ggtern", "reshape2", "stringr"))
 
 
+
+##########################################################################
 # subset Majority Market
 
 
@@ -33,33 +26,39 @@ data_majority_dates <- unique(data_majority$date)
 data_majority_dates <- data_majority_dates[order(data_majority_dates)]
 
 
-# output -> subset data
 
-data_majority_output <- 
+
+##########################################################################
+# output1 -> subset data
+
+data_majority_outcome <- 
     melt(data_majority, 
          id.vars = c("date_char", "Outcome"), 
          measure.vars = c("Back", "Lay"))
 
-data_majority_output$Outcome <- 
+data_majority_outcome$Outcome <- 
     paste(
-        data_majority_output$Outcome, 
-        data_majority_output$variable, 
+        data_majority_outcome$Outcome, 
+        data_majority_outcome$variable, 
         sep = "_")
 
-data_majority_output <- data_majority_output[, c(1,2,4)]
+data_majority_outcome <- data_majority_outcome[, c(1,2,4)]
 
-data_majority_output <- 
-    dcast(data_majority_output, date_char ~ Outcome)
+data_majority_outcome <- 
+    dcast(data_majority_outcome, date_char ~ Outcome)
 
-data_majority_output <- 
-    data_majority_output[
+data_majority_outcome <- 
+    data_majority_outcome[
         order(
-            strptime(data_majority_output$date_char, "%d/%m/%Y %H:%M:%s")),]
+            strptime(data_majority_outcome$date_char, "%d/%m/%Y %H:%M:%s")),]
 
-row.names(data_majority_output) <- NULL
+row.names(data_majority_outcome) <- NULL
 
-write.csv(data_majority_output, "Majority_Market_Trinary.csv")
+write.csv(data_majority_outcome, "Majority_Market_Trinary.csv")
 
+
+##########################################################################
+# Output2 -> Classic Graph
 
 png("Majority_Market.png", width = 800, height = 400)
 
@@ -71,76 +70,61 @@ qplot(date,
 
 dev.off()
 
+
+
+##########################################################################
+# Output3 -> Animated Gif
+
+number_of_diagrams <- 30
+delay <- 50
+
+first_date <-strptime("2014-09-01 00:00:00", "%Y-%m-%d %H:%M:%s")
+last_date <-strptime("2015-01-20 00:00:00", "%Y-%m-%d %H:%M:%s")
+
 # Create plots
 
-for(i in seq_along(data_majority_dates))
+for (i in 1:number_of_diagrams)
 {
+    target_date <- 
+        difftime(last_date, 
+                 first_date, 
+                 units = "secs") * i / number_of_diagrams + first_date
     
-    data_majority_latest <- 
-        subset(data_majority, date == data_majority_dates[i])
+    saved_date <- 
+        max(data_majority_dates[data_majority_dates < target_date])
+    
+    data_majority_a_date <- data_majority[
+        data_majority$date == 
+            saved_date,]            
     
     
-    data_majority_latest <- 
-        data_majority_latest[order(data_majority_latest$Outcome),]
+    data_majority_a_date <- 
+        Get_3Way_Odds(data_majority_a_date,
+                      list("Conservative Majority", "Labour Majority"),
+                      "No Overall Majority")
     
-    data_majority_latest[4, c("Back", "Lay")] <- 
-        1/colSums(1/data_majority_latest[c(1,4),c("Back", "Lay")])
-    
-    data_majority_latest <- 
-        data_majority_latest[2:4, c("Outcome", "Back", "Lay")]
-    
-    #    row.names(data_majority_latest) <- NULL
     labels <- c("CON", "LAB", "NO")
     
     ter_graph <- 
         Get_Ternary_Diagram (
-            data_majority_latest, 
+            data_majority_a_date, 
             labels, 
-            strftime(data_majority_dates[i], "%d %b"))
+            strftime(saved_date, "%d %b"))
     
     
-    png(paste("plots/",i, ".png", sep = ""), width = 640, height = 640)
+    png(paste("plots/",str_pad(i, 3, pad = "0"), ".png", sep = ""), width = 640, height = 640)
     print(ter_graph)
     dev.off()
 }
 
 
 # bind digrams
-
-delay_scale <- 10 
-
-
-delay <- 
-    ceiling(
-        as.numeric(
-            data_majority_dates[2]-data_majority_dates[1],"days")*delay_scale)
-
-
-
 shell(
     paste("convert -delay",
           delay, 
-          "plots/1.png plots/2.png Majority_Prob.gif",
+          "plots/*.png Majority_Prob.gif",
           sep = " "))
 
-
-for (i in 2:length(data_majority_dates)){
-    
-    delay <- 
-        ceiling(
-            as.numeric(
-                data_majority_dates[i]-data_majority_dates[i-1],
-                "days")*delay_scale)
-    
-    shell(
-        paste("convert -delay ", 
-              delay, 
-              " Majority_Prob.gif plots/"
-              ,i,
-              ".png Majority_Prob.gif", 
-              sep = ""))  
-    
-}
 
 
 
