@@ -8,63 +8,76 @@ source("../General_Functions/Get_3Way_Odds.R")
 Load_Libraries(c("ggplot2", "ggtern", "reshape2", "stringr"))
 
 
+this_Market <- "2015 UK General Election - Overall Majority"
+CSV_Output  <- "Majority_Market_Trinary.csv" 
+PNG_Output  <- "Majority_Market.png"
+GIF_Output  <- "Majority_Prob.gif"
+
+
+number_of_diagrams <- 5
+delay <- 100
+
+first_date <-strptime("2014-09-02 00:00:00", "%Y-%m-%d %H:%M:%s")
+last_date <-strptime("2015-01-30 00:00:00", "%Y-%m-%d %H:%M:%s")
+
+main_outputs <- list("Conservative Majority", "Labour Majority")
+other_outputs <- "No Overall Majority"
+
+labels <- c("CON", "LAB", "NO")
+
 
 ##########################################################################
-# subset Majority Market
+# subset Market
 
 
-data_majority <- 
+
+data <- 
     subset(all_odds_data, 
-           Market == "2015 UK General Election - Overall Majority")
+           Market == this_Market)
 
-data_majority <- 
-    subset(data_majority, date >= strptime("01/09/2014", "%d/%m/%Y"))
+row.names(data) <- NULL
 
-row.names(data_majority) <- NULL
-
-data_majority_dates <- unique(data_majority$date)
-data_majority_dates <- data_majority_dates[order(data_majority_dates)]
-
-
+data_dates <- unique(data$date)
+data_dates <- data_dates[order(data_dates)]
 
 
 ##########################################################################
 # output1 -> subset data
 
-data_majority_outcome <- 
-    melt(data_majority, 
+data_outcome <- 
+    melt(data, 
          id.vars = c("date_char", "Outcome"), 
          measure.vars = c("Back", "Lay"))
 
-data_majority_outcome$Outcome <- 
+data_outcome$Outcome <- 
     paste(
-        data_majority_outcome$Outcome, 
-        data_majority_outcome$variable, 
+        data_outcome$Outcome, 
+        data_outcome$variable, 
         sep = "_")
 
-data_majority_outcome <- data_majority_outcome[, c(1,2,4)]
+data_outcome <- data_outcome[, c(1,2,4)]
 
-data_majority_outcome <- 
-    dcast(data_majority_outcome, date_char ~ Outcome)
+data_outcome <- 
+    dcast(data_outcome, date_char ~ Outcome)
 
-data_majority_outcome <- 
-    data_majority_outcome[
+data_outcome <- 
+    data_outcome[
         order(
-            strptime(data_majority_outcome$date_char, "%d/%m/%Y %H:%M:%s")),]
+            strptime(data_outcome$date_char, "%d/%m/%Y %H:%M:%s")),]
 
-row.names(data_majority_outcome) <- NULL
+row.names(data_outcome) <- NULL
 
-write.csv(data_majority_outcome, "Majority_Market_Trinary.csv")
+write.csv(data_outcome, CSV_Output)
 
 
 ##########################################################################
 # Output2 -> Classic Graph
 
-png("Majority_Market.png", width = 800, height = 400)
+png(PNG_Output, width = 800, height = 400)
 
 qplot(date, 
       100/Back, 
-      data = data_majority, 
+      data = data, 
       color = Outcome, 
       ylab = "(implied) probability (%)")
 
@@ -75,11 +88,7 @@ dev.off()
 ##########################################################################
 # Output3 -> Animated Gif
 
-number_of_diagrams <- 200
-delay <- 10
 
-first_date <-strptime("2014-09-02 00:00:00", "%Y-%m-%d %H:%M:%s")
-last_date <-strptime("2015-01-30 00:00:00", "%Y-%m-%d %H:%M:%s")
 
 # Create plots
 
@@ -93,23 +102,22 @@ for (i in 1:number_of_diagrams)
                  units = "secs") * i / number_of_diagrams + first_date
     
     saved_date <- 
-        max(data_majority_dates[data_majority_dates < target_date])
+        max(data_dates[data_dates < target_date])
     
-    data_majority_a_date <- data_majority[
-        data_majority$date == 
+    data_a_date <- data[
+        data$date == 
             saved_date,]            
     
     
-    data_majority_a_date <- 
-        Get_3Way_Odds(data_majority_a_date,
-                      list("Conservative Majority", "Labour Majority"),
-                      "No Overall Majority")
+    data_a_date <- 
+        Get_3Way_Odds(data_a_date,
+                      main_outputs,
+                      other_outputs)
     
-    labels <- c("CON", "LAB", "NO")
     
     ter_graph <- 
         Get_Ternary_Diagram (
-            data_majority_a_date, 
+            data_a_date, 
             labels, 
             strftime(saved_date, "%d %b"))
     
@@ -132,7 +140,8 @@ for (i in 1:number_of_diagrams)
 shell(
     paste("convert -delay",
           delay, 
-          "plots/*.png Majority_Prob.gif",
+          "plots/*.png",
+          GIF_Output,
           sep = " "))
 
 
