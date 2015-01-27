@@ -75,13 +75,15 @@ dev.off()
 ##########################################################################
 # Output3 -> Animated Gif
 
-number_of_diagrams <- 30
-delay <- 50
+number_of_diagrams <- 200
+delay <- 10
 
-first_date <-strptime("2014-09-01 00:00:00", "%Y-%m-%d %H:%M:%s")
-last_date <-strptime("2015-01-20 00:00:00", "%Y-%m-%d %H:%M:%s")
+first_date <-strptime("2014-09-02 00:00:00", "%Y-%m-%d %H:%M:%s")
+last_date <-strptime("2015-01-30 00:00:00", "%Y-%m-%d %H:%M:%s")
 
 # Create plots
+
+dir.create("Plots")
 
 for (i in 1:number_of_diagrams)
 {
@@ -112,8 +114,16 @@ for (i in 1:number_of_diagrams)
             strftime(saved_date, "%d %b"))
     
     
-    png(paste("plots/",str_pad(i, 3, pad = "0"), ".png", sep = ""), width = 640, height = 640)
+    png(
+        paste("plots/",
+              str_pad(i, 3, pad = "0"), 
+              ".png", 
+              sep = ""), 
+        width = 640, 
+        height = 640)
+    
     print(ter_graph)
+    
     dev.off()
 }
 
@@ -126,20 +136,4 @@ shell(
           sep = " "))
 
 
-
-
-
-
-
-
-
-# setwd("./Plots")
-# sapply(list.files(), file.remove)
-# setwd("..")
-
-
-
-
-
-
-
+unlink("Plots", recursive = TRUE) 
