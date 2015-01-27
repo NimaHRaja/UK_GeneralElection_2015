@@ -9,15 +9,15 @@ Load_Libraries(c("ggplot2", "ggtern", "reshape2", "stringr"))
 
 
 this_Market <- "2015 UK General Election - Overall Majority"
-CSV_Output  <- "Majority_Market_Trinary.csv" 
+CSV_Output  <- "Majority_Market_Ternary.csv" 
 PNG_Output  <- "Majority_Market.png"
 GIF_Output  <- "Majority_Prob.gif"
 
 
-number_of_diagrams <- 5
-delay <- 100
+number_of_diagrams <- 200
+delay <- 10
 
-first_date <-strptime("2014-09-02 00:00:00", "%Y-%m-%d %H:%M:%s")
+first_date <-strptime("2014-09-01 00:00:00", "%Y-%m-%d %H:%M:%s")
 last_date <-strptime("2015-01-30 00:00:00", "%Y-%m-%d %H:%M:%s")
 
 main_outputs <- list("Conservative Majority", "Labour Majority")
@@ -121,14 +121,15 @@ for (i in 1:number_of_diagrams)
             labels, 
             strftime(saved_date, "%d %b"))
     
-    
-    png(
+    png_file <- 
         paste("plots/",
               str_pad(i, 3, pad = "0"), 
               ".png", 
-              sep = ""), 
-        width = 640, 
-        height = 640)
+              sep = "")
+    
+    print(png_file)
+    
+    png(png_file, width = 640, height = 640)
     
     print(ter_graph)
     
