@@ -1,149 +1,53 @@
-# Load  Data, Source Functions, and Load Libraries
+# Load  Data, Source Functions, and Libraries
 
-source("../General_Functions/Load_data.R")
-source("../General_Functions/Load_Libraries.R")
-source("../General_Functions/Get_Convex_Hull.R")
-source("../General_Functions/Get_Ternary_Diagram.R")
-source("../General_Functions/Get_3Way_Odds.R")
+source("../General_Functions/Source_All.R")
+
 Load_Libraries(c("ggplot2", "ggtern", "reshape2", "stringr"))
 
 
-this_Market <- "2015 UK General Election - Overall Majority"
-CSV_Output  <- "Majority_Market_Ternary.csv" 
-PNG_Output  <- "Majority_Market.png"
-GIF_Output  <- "Majority_Prob.gif"
 
+############################################################################
+# Subset Market?
 
-number_of_diagrams <- 200
-delay <- 10
+this_Market <- "UK Seat Totals - UKIP Seats Total"
 
-first_date <-strptime("2014-09-01 00:00:00", "%Y-%m-%d %H:%M:%s")
-last_date <-strptime("2015-01-30 00:00:00", "%Y-%m-%d %H:%M:%s")
-
-main_outputs <- list("Conservative Majority", "Labour Majority")
-other_outputs <- "No Overall Majority"
-
-labels <- c("CON", "LAB", "NO")
-
-
-##########################################################################
-# subset Market
-
-
-
-data <- 
-    subset(all_odds_data, 
-           Market == this_Market)
+data <- subset(all_odds_data, Market == this_Market)
 
 row.names(data) <- NULL
 
-data_dates <- unique(data$date)
-data_dates <- data_dates[order(data_dates)]
+
+############################################################################
+# Market's data -> CSV
+
+Single_Market_CSV_Output(data, "UKIP_Seats_Market_Ternary.csv")
 
 
-##########################################################################
-# output1 -> subset data
+############################################################################
+# Class Graph -> PNG
 
-data_outcome <- 
-    melt(data, 
-         id.vars = c("date_char", "Outcome"), 
-         measure.vars = c("Back", "Lay"))
-
-data_outcome$Outcome <- 
-    paste(
-        data_outcome$Outcome, 
-        data_outcome$variable, 
-        sep = "_")
-
-data_outcome <- data_outcome[, c(1,2,4)]
-
-data_outcome <- 
-    dcast(data_outcome, date_char ~ Outcome)
-
-data_outcome <- 
-    data_outcome[
-        order(
-            strptime(data_outcome$date_char, "%d/%m/%Y %H:%M:%s")),]
-
-row.names(data_outcome) <- NULL
-
-write.csv(data_outcome, CSV_Output)
+Single_Market_Classic_Graph_Output(data, "UKIP_Seats_Market.png")
 
 
-##########################################################################
-# Output2 -> Classic Graph
+############################################################################
+# Ternary Animated -> Gif
 
-png(PNG_Output, width = 800, height = 400)
+GIF_Output  <- "UKIP_Seats_Prob.gif"
 
-qplot(date, 
-      100/Back, 
-      data = data, 
-      color = Outcome, 
-      ylab = "(implied) probability (%)")
+number_of_diagrams <- 200
+delay <- 5
 
-dev.off()
+first_date <-strptime("2014-07-01 00:00:00", "%Y-%m-%d %H:%M:%s")
+last_date <-strptime("2015-01-30 00:00:00", "%Y-%m-%d %H:%M:%s")
 
+main_outputs <- list("None", "One to Five")
+other_outputs <- "Over Five"
 
+labels <- c("None", "One to Five",  "Over 5")
 
-##########################################################################
-# Output3 -> Animated Gif
-
-
-
-# Create plots
-
-dir.create("Plots")
-
-for (i in 1:number_of_diagrams)
-{
-    target_date <- 
-        difftime(last_date, 
-                 first_date, 
-                 units = "secs") * i / number_of_diagrams + first_date
-    
-    saved_date <- 
-        max(data_dates[data_dates < target_date])
-    
-    data_a_date <- data[
-        data$date == 
-            saved_date,]            
-    
-    
-    data_a_date <- 
-        Get_3Way_Odds(data_a_date,
-                      main_outputs,
-                      other_outputs)
-    
-    
-    ter_graph <- 
-        Get_Ternary_Diagram (
-            data_a_date, 
-            labels, 
-            strftime(saved_date, "%d %b"))
-    
-    png_file <- 
-        paste("plots/",
-              str_pad(i, 3, pad = "0"), 
-              ".png", 
-              sep = "")
-    
-    print(png_file)
-    
-    png(png_file, width = 640, height = 640)
-    
-    print(ter_graph)
-    
-    dev.off()
-}
-
-
-# bind digrams
-shell(
-    paste("convert -delay",
-          delay, 
-          "plots/*.png",
-          GIF_Output,
-          sep = " "))
-
-
-unlink("Plots", recursive = TRUE) 
+Single_Market_Ternary_Animated_Output(data, 
+                                      first_date, 
+                                      last_date, 
+                                      main_outputs, 
+                                      other_outputs, 
+                                      GIF_Output, 
+                                      labels)

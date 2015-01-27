@@ -1,5 +1,5 @@
 # Load  Data
-source("../General_Functions/Load_data.R")
+source("../General_Functions/Source_All.R")
 
 # Find Major Markets
 
@@ -32,89 +32,37 @@ View(subset(all_odds_data, Market == "Hendon - Hendon - Winner"))
 
 
 
+data <- subset(all_odds_data, Market == "UK Seat Totals - UKIP Seats Total")
 
-# 2015 UK General Election - Most Seats
+data <- data[data$date == max(data$date),]
+row.names(data) <- NULL
 
-data_most_seats <- 
-    subset(all_odds_data, 
-           Market == "2015 UK General Election - Most Seats")
+main_outputs <- list("Conservative", "UKIP")
+other_outputs <- "OTHER"
 
+labels <- c("CON", "LAB", "NO")
+title <- "aef"
 
-qplot(date, 1/Back, col = Outcome, data = data_most_seats, ylab = "Prob (%)")
+data <- 
+    Get_3Way_Odds(data,
+                  main_outputs,
+                  other_outputs)
 
-
-# 2015 UK General Election - Overall Majority
-
-data_majority <- 
-    subset(all_odds_data, 
-           Market == "2015 UK General Election - Overall Majority")
-
-
-qplot(date, 1/Back, col = Outcome, data = data_majority, ylab = "Prob (%)")
-
+data <- 
+    Get_Convex_Hull(data)
 
 
-data_majority_latest <- 
-    subset(data_majority, date == max(data_majority$date))
-
-data_majority_latest <- 
-    data_majority_latest[order(Outcome),]
-
-data_majority_latest[4, c("Back", "Lay")] <- 
-    1/colSums(1/data_majority_latest[c(1,4),c("Back", "Lay")])
-
-data_majority_latest <- 
-    data_majority_latest[2:4, c("Outcome", "Back", "Lay")]
-
-row.names(data_majority_latest) <- NULL
+ggtern(data = data, 
+       aes(x = Var1, y = Var2, z = Var3)) + 
+    geom_polygon(color = "Green")
 
 
 
-source("get_convex_hull.R")
-
-tri_graph_data_majority_latest <- get_convex_hull(data_majority_latest)
-
-names(tri_graph_data_majority_latest) <- c("CON", "LAB", "NO")
-row.names(tri_graph_data_majority_latest) <- NULL 
-
-
-
-#library(ggtern)
-
-ggtern(data = tri_graph_data_majority_latest, 
-       aes(x = CON, y = LAB, z = NO)) + 
-    geom_point(color = "yellow", size = 6) +
-    ggtitle("Prob_Majority") +
-    theme_tern_rgbg()
-
-
-
-# UK Seat Totals - UKIP Seats Total
-
-data_UKIP_seats <- 
-    subset(all_odds_data, 
-           Market == "UK Seat Totals - UKIP Seats Total")
-
-
-qplot(date, 1/Back, col = Outcome, data = data_UKIP_seats, ylab = "Prob (%)")
-
-
-
-data_UKIP_seats_latest <- 
-    subset(data_UKIP_seats, date_char == max(data_UKIP_seats$date))
-
-data_UKIP_seats_latest <- 
-    data_UKIP_seats_latest[, c("Outcome", "Back", "Lay")]
-
-row.names(data_UKIP_seats_latest) <- NULL
-
-
-source("get_convex_hull.R")
-
-tri_graph_data_UKIP_seats_latest <- get_convex_hull(data_UKIP_seats_latest)
-
-names(tri_graph_data_UKIP_seats_latest) <- c("OneToFive", "OverFive", "None")
-row.names(tri_graph_data_UKIP_seats_latest) <- NULL 
++
+    ggtitle(title) +
+    labs(x = labels[1], y = labels[2], z = labels[3]) +
+    theme_tern_rgbg(base_size = 18) +
+    theme(plot.title = element_text(size = rel(1.5)))
 
 
 

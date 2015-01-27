@@ -9,5 +9,5 @@ Get_3Way_Odds <- function(data, major_outcomes, other_outcome){
     data_temp[3, "Outcome"] <- other_outcome
     row.names(data_temp) <- NULL
     
-    data_temp
+    data_temp[order(data_temp$Outcome),]
 }
