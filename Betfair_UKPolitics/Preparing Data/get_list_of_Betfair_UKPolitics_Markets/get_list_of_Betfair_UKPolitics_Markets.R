@@ -36,7 +36,8 @@ List_of_SubMarkets <- function(url, output){
 }
 
 
-library(XML)
+source("../../General_Functions/Load_Libraries.R")
+Load_Libraries("XML")
 
 base <- "http://www.betfair.com/exchange"
 output <- list()
