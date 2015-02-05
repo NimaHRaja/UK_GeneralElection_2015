@@ -1,0 +1,8 @@
+C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\HtmlAgilityPack.dll
+C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\HtmlAgilityPack.pdb
+C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\HtmlAgilityPack.xml
+C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.exe
+C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.pdb
