@@ -18,26 +18,33 @@ As the markets don't appear (or disappear) everyday, I only run the following (c
 
 
 ```r
-# root_dir <- getwd()
-# setwd("./Preparing Data/Get_list_of_Betfair_UKPolitics_Markets/")
-# source("Get_list_of_Betfair_UKPolitics_Markets.R")
-# setwd(root_dir)
+root_dir <- getwd()
+setwd("./Codes/")
+source("Get_list_of_Betfair_UKPolitics_Markets.R")
+```
+
+```
+## Warning: package 'XML' was built under R version 3.0.3
+```
+
+```
+## [1] "Libraries Loaded"
+## [1] "/exchange/politics/market?id=1.116751151"
+```
+
+```r
+setwd(root_dir)
 ```
 
 The output file looks like:
 
 ```r
-list_of_markets<- 
-    read.csv(
-        "./Preparing Data/data/list_of_Betfair_UKPolitics_Markets.txt",
-        header = FALSE)
-num_markets <- dim(list_of_markets)[1]
+# list_of_markets<- 
+#     read.csv(
+#         "./Preparing Data/data/list_of_Betfair_UKPolitics_Markets.txt",
+#         header = FALSE)
+# num_markets <- dim(list_of_markets)[1]
 ```
-Betfair has 689 unique UK-Politics markets.
-
-## Getting Odds
-
-A c# project (/Preparing Data/Betfair_data_parse)goes through all 689 markets, gets 
 
 
 

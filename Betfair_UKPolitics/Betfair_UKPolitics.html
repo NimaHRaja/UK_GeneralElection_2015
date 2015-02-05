@@ -68,7 +68,6 @@ img {
 <li><a href="#about">About</a></li>
 <li><a href="#preparing-data">Preparing Data</a><ul>
 <li><a href="#getting-list-of-betfair-uk-politics-markets">Getting List of Betfair UK Politics Markets</a></li>
-<li><a href="#getting-odds">Getting Odds</a></li>
 </ul></li>
 </ul>
 </div>
@@ -85,21 +84,19 @@ img {
 <h2>Getting List of Betfair UK Politics Markets</h2>
 <p><em>Get_list_of_Betfair_UKPolitics_Markets.R</em> recursively retrives a list of all the market that <a href="http://www.betfair.com/exchange/?nodeId=MENU:2707982">this page</a> is a parent or grandparent of.</p>
 <p>As the markets don’t appear (or disappear) everyday, I only run the following (commented out) chunk once or twice a week.</p>
-<pre class="r"><code># root_dir &lt;- getwd()
-# setwd(&quot;./Preparing Data/Get_list_of_Betfair_UKPolitics_Markets/&quot;)
-# source(&quot;Get_list_of_Betfair_UKPolitics_Markets.R&quot;)
-# setwd(root_dir)</code></pre>
+<pre class="r"><code>root_dir &lt;- getwd()
+setwd(&quot;./Codes/&quot;)
+source(&quot;Get_list_of_Betfair_UKPolitics_Markets.R&quot;)</code></pre>
+<pre><code>## Warning: package 'XML' was built under R version 3.0.3</code></pre>
+<pre><code>## [1] &quot;Libraries Loaded&quot;
+## [1] &quot;/exchange/politics/market?id=1.116751151&quot;</code></pre>
+<pre class="r"><code>setwd(root_dir)</code></pre>
 <p>The output file looks like:</p>
-<pre class="r"><code>list_of_markets&lt;- 
-    read.csv(
-        &quot;./Preparing Data/data/list_of_Betfair_UKPolitics_Markets.txt&quot;,
-        header = FALSE)
-num_markets &lt;- dim(list_of_markets)[1]</code></pre>
-<p>Betfair has 689 unique UK-Politics markets.</p>
-</div>
-<div id="getting-odds" class="section level2">
-<h2>Getting Odds</h2>
-<p>A c# project (/Preparing Data/Betfair_data_parse)goes through all 689 markets, gets</p>
+<pre class="r"><code># list_of_markets&lt;- 
+#     read.csv(
+#         &quot;./Preparing Data/data/list_of_Betfair_UKPolitics_Markets.txt&quot;,
+#         header = FALSE)
+# num_markets &lt;- dim(list_of_markets)[1]</code></pre>
 </div>
 </div>
 
