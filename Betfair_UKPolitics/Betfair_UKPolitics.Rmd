@@ -23,26 +23,30 @@ This Project if about Getting, Cleaning, and Exploratory Analysis of those odds.
 As the markets don't appear (or disappear) everyday, I only run the following (commented out) chunk once or twice a week. 
 
 ```{r}
-root_dir <- getwd()
-setwd("./Codes/")
-source("Get_list_of_Betfair_UKPolitics_Markets.R")
-setwd(root_dir)
-
+# root_dir <- getwd()
+# setwd("./Codes/")
+# source("Get_list_of_Betfair_UKPolitics_Markets.R")
+# setwd(root_dir)
 ```
 
 The output file looks like:
 ```{r}
-# list_of_markets<- 
-#     read.csv(
-#         "./Preparing Data/data/list_of_Betfair_UKPolitics_Markets.txt",
-#         header = FALSE)
-# num_markets <- dim(list_of_markets)[1]
+list_of_markets<- 
+    read.csv(
+        "./raw_data/list_of_Betfair_UKPolitics_Markets.txt",
+        header = FALSE)
+head(list_of_markets)
+num_markets <- dim(list_of_markets)[1]
 ```
-Betfair has `r num_markets` unique UK-Politics markets.
+There are `r num_markets` unique UK-Politics markets on Betfair.
 
 ## Getting Odds
 
-A c# project (/Preparing Data/Betfair_data_parse)goes through all `r num_markets` markets, gets 
+A c# project goes through all `r num_markets` markets, parses HTMLs, extracts usefull bits, and appends them to the existing *Betfair_UKPolitics_odds.csv* file.
 
+the output looks like:
+```{r}
+head(read.table("./raw_data/Betfair_UKPolitics_odds.csv", sep = "\t"))
+```
 
 

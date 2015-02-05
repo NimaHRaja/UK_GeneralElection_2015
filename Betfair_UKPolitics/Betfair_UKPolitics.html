@@ -68,6 +68,7 @@ img {
 <li><a href="#about">About</a></li>
 <li><a href="#preparing-data">Preparing Data</a><ul>
 <li><a href="#getting-list-of-betfair-uk-politics-markets">Getting List of Betfair UK Politics Markets</a></li>
+<li><a href="#getting-odds">Getting Odds</a></li>
 </ul></li>
 </ul>
 </div>
@@ -84,19 +85,45 @@ img {
 <h2>Getting List of Betfair UK Politics Markets</h2>
 <p><em>Get_list_of_Betfair_UKPolitics_Markets.R</em> recursively retrives a list of all the market that <a href="http://www.betfair.com/exchange/?nodeId=MENU:2707982">this page</a> is a parent or grandparent of.</p>
 <p>As the markets don’t appear (or disappear) everyday, I only run the following (commented out) chunk once or twice a week.</p>
-<pre class="r"><code>root_dir &lt;- getwd()
-setwd(&quot;./Codes/&quot;)
-source(&quot;Get_list_of_Betfair_UKPolitics_Markets.R&quot;)</code></pre>
-<pre><code>## Warning: package 'XML' was built under R version 3.0.3</code></pre>
-<pre><code>## [1] &quot;Libraries Loaded&quot;
-## [1] &quot;/exchange/politics/market?id=1.116751151&quot;</code></pre>
-<pre class="r"><code>setwd(root_dir)</code></pre>
+<pre class="r"><code># root_dir &lt;- getwd()
+# setwd(&quot;./Codes/&quot;)
+# source(&quot;Get_list_of_Betfair_UKPolitics_Markets.R&quot;)
+# setwd(root_dir)</code></pre>
 <p>The output file looks like:</p>
-<pre class="r"><code># list_of_markets&lt;- 
-#     read.csv(
-#         &quot;./Preparing Data/data/list_of_Betfair_UKPolitics_Markets.txt&quot;,
-#         header = FALSE)
-# num_markets &lt;- dim(list_of_markets)[1]</code></pre>
+<pre class="r"><code>list_of_markets&lt;- 
+    read.csv(
+        &quot;./raw_data/list_of_Betfair_UKPolitics_Markets.txt&quot;,
+        header = FALSE)
+head(list_of_markets)</code></pre>
+<pre><code>##                                                               V1
+## 1 http://www.betfair.com/exchange/politics/market?id=1.114293290
+## 2 http://www.betfair.com/exchange/politics/market?id=1.115851511
+## 3 http://www.betfair.com/exchange/politics/market?id=1.115852011
+## 4 http://www.betfair.com/exchange/politics/market?id=1.115852043
+## 5 http://www.betfair.com/exchange/politics/market?id=1.115852058
+## 6 http://www.betfair.com/exchange/politics/market?id=1.115852158</code></pre>
+<pre class="r"><code>num_markets &lt;- dim(list_of_markets)[1]</code></pre>
+<p>There are 689 unique UK-Politics markets on Betfair.</p>
+</div>
+<div id="getting-odds" class="section level2">
+<h2>Getting Odds</h2>
+<p>A c# project goes through all 689 markets, parses HTMLs, extracts usefull bits, and appends them to the existing <em>Betfair_UKPolitics_odds.csv</em> file.</p>
+<p>the output looks like:</p>
+<pre class="r"><code>head(read.table(&quot;./raw_data/Betfair_UKPolitics_odds.csv&quot;, sep = &quot;\t&quot;))</code></pre>
+<pre><code>##                         V1   V2               V3   V4 V5
+## 1 Argyll and Bute - Winner back Liberal Democrat 1.16 20
+## 2 Argyll and Bute - Winner back Liberal Democrat 3.50 15
+## 3 Argyll and Bute - Winner back     Conservative 3.50 15
+## 4 Argyll and Bute - Winner back           Labour 1.56 10
+## 5 Argyll and Bute - Winner back           Labour 2.76 45
+## 6 Argyll and Bute - Winner back              SNP 1.10 50
+##                    V6
+## 1 06/01/2015 17:15:42
+## 2 06/01/2015 17:15:42
+## 3 06/01/2015 17:15:42
+## 4 06/01/2015 17:15:42
+## 5 06/01/2015 17:15:42
+## 6 06/01/2015 17:15:42</code></pre>
 </div>
 </div>
 
