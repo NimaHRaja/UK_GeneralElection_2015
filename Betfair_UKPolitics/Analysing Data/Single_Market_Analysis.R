@@ -10,7 +10,7 @@ Load_Libraries(c("ggplot2", "ggtern", "reshape2", "stringr"))
 # Subset Market?
 
 # this_Market <- "UK Seat Totals - UKIP Seats Total"
- this_Market <- "2015 UK General Election - Overall Majority"
+this_Market <- "2015 UK General Election - Overall Majority"
 # this_Market <- "2015 UK General Election - Most Seats"
 
 data <- subset(all_odds_data, Market == this_Market)
@@ -22,7 +22,7 @@ row.names(data) <- NULL
 # Market's data -> CSV
 
 # Single_Market_CSV_Output(data, "UKIP_Seats_Market_Ternary.csv")
- Single_Market_CSV_Output(data, "Majority_Market_Ternary.csv")
+Single_Market_CSV_Output(data, "Majority_Market_Ternary.csv")
 # Single_Market_CSV_Output(data, "Most_Seats_Market_Ternary.csv")
 
 
@@ -32,7 +32,7 @@ row.names(data) <- NULL
 # Class Graph -> PNG
 
 # Single_Market_Classic_Graph_Output(data, "UKIP_Seats_Market.png")
- Single_Market_Classic_Graph_Output(data, "Majority_Market.png")
+Single_Market_Classic_Graph_Output(data, "Majority_Market.png")
 # Single_Market_Classic_Graph_Output(data, "MostSeats_Market.png")
 
 
@@ -40,7 +40,7 @@ row.names(data) <- NULL
 # Ternary Animated -> Gif
 
 # GIF_Output  <- "UKIP_Seats_Prob.gif"
- GIF_Output  <- "Majority_Prob.gif"
+GIF_Output  <- "Majority_Prob.gif"
 # GIF_Output  <- "MostSeats_Prob.gif"
 
 number_of_diagrams <- 200
@@ -66,8 +66,6 @@ labels <- c("CON", "LAB", "NO")
 # labels <- c("CON", "LAB", "NO")
 
 
-
-
 Single_Market_Ternary_Animated_Output(data, 
                                       first_date, 
                                       last_date, 
@@ -76,5 +74,12 @@ Single_Market_Ternary_Animated_Output(data,
                                       GIF_Output, 
                                       labels)
 
-write(as.character(Sys.time()), "time.txt")
+meta <- data.frame(
+    time = as.character(Sys.time()),
+    number_of_diagrams = number_of_diagrams,
+    delay = delay,
+    first_date = first_date,
+    last_date = last_date )
+
+write.table(meta, "meta.txt", row.names = FALSE)
 
