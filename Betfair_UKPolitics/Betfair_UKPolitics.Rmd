@@ -1,9 +1,5 @@
 ---
 title: "Betfair_UKPolitics"
-output:
-  html_document:
-    keep_md: yes
-    toc: yes
 ---
 
 # About
@@ -31,22 +27,32 @@ As the markets don't appear (or disappear) everyday, I only run the following (c
 
 The output file looks like:
 ```{r}
-list_of_markets<- 
-    read.csv(
-        "./raw_data/list_of_Betfair_UKPolitics_Markets.txt",
-        header = FALSE)
-head(list_of_markets)
-num_markets <- dim(list_of_markets)[1]
-```
-There are `r num_markets` unique UK-Politics markets on Betfair.
+head(read.csv("./raw_data/list_of_Betfair_UKPolitics_Markets.txt", 
+              header = FALSE))
 
+```
 ## Getting Odds
 
-A c# project goes through all `r num_markets` markets, parses HTMLs, extracts usefull bits, and appends them to the existing *Betfair_UKPolitics_odds.csv* file.
+A c# project goes through all markets, parses HTMLs, extracts usefull bits, and appends them to the existing *Betfair_UKPolitics_odds.csv* file.
 
 the output looks like:
 ```{r}
 head(read.table("./raw_data/Betfair_UKPolitics_odds.csv", sep = "\t"))
 ```
 
+## Cleaning Market Names
 
+Some Markets have had different names since I started collecting data (e.g. **2015 UK General Election - Overall Majority** used to **Next UK General Election - Overall Majority**) *Clean_UKPolitics_Odds_Data_Market_Names_Tests_Before_Cleaning.R* runs some tests to find them.
+
+*Market_Names_Replacements* contains a list of "bad" names (first column) to be replace with "good" ones (second column). It looks like:
+
+```{r}
+head(read.table("./raw_data/Market_Names_Replacements.csv", sep = "\t"))
+```
+
+```{r}
+root_dir <- getwd()
+setwd("./Codes/")
+source("Clean_UKPolitics_Odds_Data.R")
+setwd(root_dir)
+```

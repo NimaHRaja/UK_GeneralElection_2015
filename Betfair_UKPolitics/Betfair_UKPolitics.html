@@ -63,15 +63,6 @@ img {
 <h1 class="title">Betfair_UKPolitics</h1>
 </div>
 
-<div id="TOC">
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#preparing-data">Preparing Data</a><ul>
-<li><a href="#getting-list-of-betfair-uk-politics-markets">Getting List of Betfair UK Politics Markets</a></li>
-<li><a href="#getting-odds">Getting Odds</a></li>
-</ul></li>
-</ul>
-</div>
 
 <div id="about" class="section level1">
 <h1>About</h1>
@@ -90,11 +81,8 @@ img {
 # source(&quot;Get_list_of_Betfair_UKPolitics_Markets.R&quot;)
 # setwd(root_dir)</code></pre>
 <p>The output file looks like:</p>
-<pre class="r"><code>list_of_markets&lt;- 
-    read.csv(
-        &quot;./raw_data/list_of_Betfair_UKPolitics_Markets.txt&quot;,
-        header = FALSE)
-head(list_of_markets)</code></pre>
+<pre class="r"><code>head(read.csv(&quot;./raw_data/list_of_Betfair_UKPolitics_Markets.txt&quot;, 
+              header = FALSE))</code></pre>
 <pre><code>##                                                               V1
 ## 1 http://www.betfair.com/exchange/politics/market?id=1.114293290
 ## 2 http://www.betfair.com/exchange/politics/market?id=1.115851511
@@ -102,12 +90,10 @@ head(list_of_markets)</code></pre>
 ## 4 http://www.betfair.com/exchange/politics/market?id=1.115852043
 ## 5 http://www.betfair.com/exchange/politics/market?id=1.115852058
 ## 6 http://www.betfair.com/exchange/politics/market?id=1.115852158</code></pre>
-<pre class="r"><code>num_markets &lt;- dim(list_of_markets)[1]</code></pre>
-<p>There are 689 unique UK-Politics markets on Betfair.</p>
 </div>
 <div id="getting-odds" class="section level2">
 <h2>Getting Odds</h2>
-<p>A c# project goes through all 689 markets, parses HTMLs, extracts usefull bits, and appends them to the existing <em>Betfair_UKPolitics_odds.csv</em> file.</p>
+<p>A c# project goes through all markets, parses HTMLs, extracts usefull bits, and appends them to the existing <em>Betfair_UKPolitics_odds.csv</em> file.</p>
 <p>the output looks like:</p>
 <pre class="r"><code>head(read.table(&quot;./raw_data/Betfair_UKPolitics_odds.csv&quot;, sep = &quot;\t&quot;))</code></pre>
 <pre><code>##                         V1   V2               V3   V4 V5
@@ -124,6 +110,30 @@ head(list_of_markets)</code></pre>
 ## 4 06/01/2015 17:15:42
 ## 5 06/01/2015 17:15:42
 ## 6 06/01/2015 17:15:42</code></pre>
+</div>
+<div id="cleaning-market-names" class="section level2">
+<h2>Cleaning Market Names</h2>
+<p>Some Markets have had different names since I started collecting data (e.g. <strong>2015 UK General Election - Overall Majority</strong> used to <strong>Next UK General Election - Overall Majority</strong>) <em>Clean_UKPolitics_Odds_Data_Market_Names_Tests_Before_Cleaning.R</em> runs some tests to find them.</p>
+<p><em>Market_Names_Replacements</em> contains a list of “bad” names (first column) to be replace with “good” ones (second column). It looks like:</p>
+<pre class="r"><code>head(read.table(&quot;./raw_data/Market_Names_Replacements.csv&quot;, sep = &quot;\t&quot;))</code></pre>
+<pre><code>##                                                                 V1
+## 1                           Next UK General Election - Most Seats 
+## 2                     Next UK General Election - Overall Majority 
+## 3                           Next UK General Election - UKIP Seats 
+## 4 2015 Prime Minister after Cameron - Prime Minister after Cameron
+## 5                            Next UK General Election - Most Seats
+## 6                      Next UK General Election - Overall Majority
+##                                                            V2
+## 1                       Next UK General Election - Most Seats
+## 2                 Next UK General Election - Overall Majority
+## 3                       Next UK General Election - UKIP Seats
+## 4 Prime Minister after Cameron - Prime Minister after Cameron
+## 5                       2015 UK General Election - Most Seats
+## 6                 2015 UK General Election - Overall Majority</code></pre>
+<pre class="r"><code>root_dir &lt;- getwd()
+setwd(&quot;./Codes/&quot;)
+source(&quot;Clean_UKPolitics_Odds_Data.R&quot;)
+setwd(root_dir)</code></pre>
 </div>
 </div>
 

@@ -53,8 +53,6 @@ There are 689 unique UK-Politics markets on Betfair.
 
 A c# project goes through all 689 markets, parses HTMLs, extracts usefull bits, and appends them to the existing *Betfair_UKPolitics_odds.csv* file.
 
-
-
 the output looks like:
 
 ```r
