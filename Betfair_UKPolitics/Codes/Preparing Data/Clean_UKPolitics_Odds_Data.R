@@ -1,6 +1,6 @@
 # Load Raw Data 
 
-all_odds_data <- read.table("../raw_data/Betfair_UKPolitics_odds.csv", 
+all_odds_data <- read.table("../../raw_data/Betfair_UKPolitics_odds.csv", 
                             sep = "\t"
                             , stringsAsFactor = FALSE)
 names(all_odds_data) <- 
@@ -11,12 +11,12 @@ names(all_odds_data) <-
 # Clean Market Names
 
 market_names_replacements <- read.table(
-    "../raw_data/Market_Names_Replacements.csv", 
+    "../../raw_data/Market_Names_Replacements.csv", 
                                         sep = "\t", 
                                         stringsAsFactor = FALSE)
 
-
-paste('Tot_Markets_Before = ', length(unique(all_odds_data$Market)))
+Tot_Markets_Before <- length(unique(all_odds_data$Market))
+print(paste('Tot_Markets_Before = ', Tot_Markets_Before))
 
 for (i in 1:dim(market_names_replacements)[1]){
     all_odds_data$Market <- gsub(market_names_replacements[i,1],
@@ -26,7 +26,8 @@ for (i in 1:dim(market_names_replacements)[1]){
     #  print(length(unique(all_odds_data$Market)))
 }
 
-paste('Tot_Markets_After = ', length(unique(all_odds_data$Market)))
+Tot_Markets_After <- length(unique(all_odds_data$Market))
+print(paste('Tot_Markets_After = ', length(unique(all_odds_data$Market))))
 
 
 ################################################################################

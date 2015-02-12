@@ -1,7 +1,8 @@
 List_of_SubMarkets <- function(url, output){
     
     List_of_SubLinks <- function(url){
-        parsed_html <- htmlTreeParse(url,useInternal=TRUE)
+        html_page <- getURL(url, ssl.verifypeer = FALSE)
+        parsed_html <- htmlTreeParse(html_page,useInternal=TRUE)
         xpathSApply(parsed_html,
                     "//ul[@class = 'children']/li/a",
                     xmlGetAttr,"href")       

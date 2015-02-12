@@ -1,6 +1,6 @@
 ## Load Raw Data 
 
-all_odds_data <- read.table("../raw_data/Betfair_UKPolitics_odds.csv", 
+all_odds_data <- read.table("../../raw_data/Betfair_UKPolitics_odds.csv", 
                             sep = "\t"
                             , stringsAsFactor = FALSE)
 names(all_odds_data) <- 
