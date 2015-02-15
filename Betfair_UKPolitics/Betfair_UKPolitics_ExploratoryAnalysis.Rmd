@@ -1,0 +1,51 @@
+---
+title: "Betfair_UKPolitics_ExploratoryAnalysis"
+output:
+  html_document:
+    keep_md: yes
+    toc: yes
+---
+
+### About
+
+Some Exploratory Analysis of Betfair_UKPolitics_Markets.
+
+```{r, warning = FALSE}
+root_dir <- getwd()
+setwd("./Codes/Exploratory Analysis/")
+source("Markets_Name_Matched_Analysis.R")
+setwd(root_dir)
+```
+
+### Number and Type of Markets
+
+```{r, echo = FALSE}
+paste("# Markets", length(unique(all_odds_data$Market)), sep = " = ")
+paste("# Constituency Markets", length(constituency_Markets), sep = " = ")
+paste("# Other Markets", length(other_Markets), sep = " = ")
+```
+
+### Constituency Markets
+
+Lots of Constituency Markets are not active yet. Just `r dim(data_matched_constituencies)[1]` (out of `r length(constituency_Markets)`) have non-zero "Matched" value. Those are:
+
+```{r}
+data_matched_constituencies
+```
+
+### Other Markets
+
+List of other Markets:
+
+```{r}
+data_matched_other
+```
+
+
+
+# ternary constituencies
+
+
+
+
+

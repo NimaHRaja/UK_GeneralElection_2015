@@ -25,3 +25,10 @@ General codes.
 ---------------------------------
 
 The necessary files to create an animated gif of the history of (implied) probabilities of CON-Majority, LAB-Majority, and No-Majority according to the market.
+
+
+# About
+
+I am interested in *UK Political Betting*. so, I regularly get odds from all Betfair's "UK Politics" Markets, i.e. all the sub-branches of [this page](http://www.betfair.com/exchange/?nodeId=MENU:2707982).
+
+This Project if about Getting, Cleaning, and Exploratory Analysis of those odds.
