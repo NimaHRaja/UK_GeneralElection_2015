@@ -1,4 +1,4 @@
-all_odds_data <- read.table("../Betfair_UKPolitics_Odds_History.csv", 
+all_odds_data <- read.table("../../Betfair_UKPolitics_Odds_History.csv", 
                             sep = ",", header = TRUE
                             , stringsAsFactor = FALSE)
 
