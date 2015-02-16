@@ -104,12 +104,21 @@ row.names(data_matched_constituencies) <- NULL
 major_constituency_markets <- 
     subset(data_matched_constituencies, Matched > 1000, Market)
 
-major_constituency_markets_history_plots <-  
+major_constituency_markets_history_plots_withoutErrorbar <-  
     apply(major_constituency_markets, 1, function(x) 
         Get_Prob_History_Plot(x["Market"],FALSE))
 
-names(major_constituency_markets_history_plots) <- 
+names(major_constituency_markets_history_plots_withoutErrorbar) <- 
     major_constituency_markets$Market
+
+major_constituency_markets_history_plots_withErrorbar <-  
+    apply(major_constituency_markets, 1, function(x) 
+        Get_Prob_History_Plot(x["Market"],TRUE))
+
+names(major_constituency_markets_history_plots_withErrorbar) <- 
+    major_constituency_markets$Market
+
+
 
 # Other Markets
 

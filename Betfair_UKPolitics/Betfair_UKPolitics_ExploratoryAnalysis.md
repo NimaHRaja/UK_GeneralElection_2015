@@ -159,7 +159,7 @@ data_matched_constituencies
 ```
 
 ```r
-major_constituency_markets_history_plots
+major_constituency_markets_history_plots_withoutErrorbar
 ```
 
 ```
@@ -188,6 +188,37 @@ major_constituency_markets_history_plots
 ```
 
 ![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-4.png) 
+
+```r
+major_constituency_markets_history_plots_withErrorbar
+```
+
+```
+## $`South Thanet - South Thanet - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-5.png) 
+
+```
+## 
+## $`Brighton Kemptown - Brighton Kemptown - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-6.png) 
+
+```
+## 
+## $`Rochester and Strood - Rochester and Strood - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-7.png) 
+
+```
+## 
+## $`Brighton Pavilion - Brighton Pavilion - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-8.png) 
 
 
 
