@@ -31,7 +31,10 @@ Lots of Constituency Markets are not active yet. Just `r dim(data_matched_consti
 
 ```{r}
 data_matched_constituencies
+major_constituency_markets_history_plots
 ```
+
+
 
 ### Other Markets
 

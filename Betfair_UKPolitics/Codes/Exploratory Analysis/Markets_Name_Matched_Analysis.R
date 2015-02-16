@@ -1,10 +1,14 @@
 # Load Libraries
-# source("../Functions/Load_Libraries.R")
-# Load_Libraries("data.table")
+source("../Functions/Load_Libraries.R")
+Load_Libraries("ggplot2")
 #######################################################################
 # Load Data
 source("../Functions/Load_Data.R")
 
+#######################################################################
+# Load Functions
+
+source("../Functions/Get_Prob_History_Plot.R")
 #######################################################################
 
 # length(unique(all_odds_data$Market))
@@ -97,6 +101,15 @@ data_matched_constituencies <-
 
 row.names(data_matched_constituencies) <- NULL
 
+major_constituency_markets <- 
+    subset(data_matched_constituencies, Matched > 1000, Market)
+
+major_constituency_markets_history_plots <-  
+    apply(major_constituency_markets, 1, function(x) 
+        Get_Prob_History_Plot(x["Market"],FALSE))
+
+names(major_constituency_markets_history_plots) <- 
+    major_constituency_markets$Market
 
 # Other Markets
 

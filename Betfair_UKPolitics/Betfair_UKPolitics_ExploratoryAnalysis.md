@@ -9,6 +9,13 @@ Some Exploratory Analysis of Betfair_UKPolitics_Markets.
 root_dir <- getwd()
 setwd("./Codes/Exploratory Analysis/")
 source("Markets_Name_Matched_Analysis.R")
+```
+
+```
+## [1] "Libraries Loaded"
+```
+
+```r
 setwd(root_dir)
 ```
 
@@ -29,7 +36,7 @@ setwd(root_dir)
 
 ### Constituency Markets
 
-Lots of Constituency Markets are not active yet. Just 54 (out of 650) have non-zero "Matched" value. Those are:
+Lots of Constituency Markets are not active yet. Just 55 (out of 650) have non-zero "Matched" value. Those are:
 
 
 ```r
@@ -53,45 +60,46 @@ data_matched_constituencies
 ## 13                                         Glasgow Central - Glasgow Central - Winner
 ## 14                                           Great Yarmouth - Great Yarmouth - Winner
 ## 15                                                   Eastbourne - Eastbourne - Winner
-## 16 Inverness Nairn Badenoch Strathspey - Inverness Nairn Badenoch Strathspey - Winner
-## 17                                           Stockton South - Stockton South - Winner
+## 16                                           Stockton South - Stockton South - Winner
+## 17 Inverness Nairn Badenoch Strathspey - Inverness Nairn Badenoch Strathspey - Winner
 ## 18                                 East Dunbartonshire - East Dunbartonshire - Winner
 ## 19                             Hampstead and Kilburn - Hampstead and Kilburn - Winner
 ## 20                                                         Watford - Watford - Winner
-## 21                           Holborn and St Pancras - Holborn and St Pancras - Winner
-## 22                                         Argyll and Bute - Argyll and Bute - Winner
-## 23       Cities of London and Westminster - Cities of London and Westminster - Winner
-## 24                                                         Clacton - Clacton - Winner
-## 25                                             Cardiff North - Cardiff North - Winner
-## 26                                               Glasgow East - Glasgow East - Winner
-## 27                                       Portsmouth South - Portsmouth South - Winner
-## 28                                                       Solihull - Solihull - Winner
-## 29                                   Glasgow North East - Glasgow North East - Winner
-## 30                     Mid Dorset and North Poole - Mid Dorset and North Poole Winner
-## 31                                   Airdrie and Shotts - Airdrie and Shotts - Winner
-## 32                                               Dudley North - Dudley North - Winner
-## 33                                                       Ynys Mon - Ynys Mon - Winner
-## 34                                                   Chippenham - Chippenham - Winner
-## 35                                                               Bath - Bath - Winner
-## 36                                     Vale of Glamorgan - Vale of Glamorgan - Winner
-## 37                                               Beaconsfield - Beaconsfield - Winner
-## 38                                                     Cambridge - Cambridge - Winner
-## 39                                   Southampton Itchen - Southampton Itchen - Winner
-## 40                                         Brigg and Goole - Brigg and Goole - Winner
-## 41                                                       Broxtowe - Broxtowe - Winner
-## 42                                             Isle of Wight - Isle of Wight - Winner
-## 43                                                       Aberavon - Aberavon - Winner
-## 44                                           Aberdeen North - Aberdeen North - Winner
-## 45                                             Bradford East - Bradford East - Winner
-## 46                                               Bristol West - Bristol West - Winner
-## 47                             Cambourne and Redruth - Cambourne and Redruth - Winner
-## 48                     Cardiff South and Penarth - Cardiff South and Penarth - Winner
-## 49                                                   Ceredigion - Ceredigion - Winner
-## 50                                                         Cheadle - Cheadle - Winner
-## 51                                                         Halifax - Halifax - Winner
-## 52                             Heywood and Middleton - Heywood and Middleton - Winner
-## 53                                             Norwich South - Norwich South - Winner
-## 54                           St Austell and Newquay - St Austell and Newquay - Winner
+## 21                                                               Hove - Hove - Winner
+## 22                           Holborn and St Pancras - Holborn and St Pancras - Winner
+## 23                                         Argyll and Bute - Argyll and Bute - Winner
+## 24       Cities of London and Westminster - Cities of London and Westminster - Winner
+## 25                                                         Clacton - Clacton - Winner
+## 26                                             Cardiff North - Cardiff North - Winner
+## 27                                               Glasgow East - Glasgow East - Winner
+## 28                                       Portsmouth South - Portsmouth South - Winner
+## 29                                                       Solihull - Solihull - Winner
+## 30                                   Glasgow North East - Glasgow North East - Winner
+## 31                     Mid Dorset and North Poole - Mid Dorset and North Poole Winner
+## 32                                   Airdrie and Shotts - Airdrie and Shotts - Winner
+## 33                                               Dudley North - Dudley North - Winner
+## 34                                                       Ynys Mon - Ynys Mon - Winner
+## 35                                                   Chippenham - Chippenham - Winner
+## 36                                                               Bath - Bath - Winner
+## 37                                     Vale of Glamorgan - Vale of Glamorgan - Winner
+## 38                                               Beaconsfield - Beaconsfield - Winner
+## 39                                                     Cambridge - Cambridge - Winner
+## 40                                   Southampton Itchen - Southampton Itchen - Winner
+## 41                                         Brigg and Goole - Brigg and Goole - Winner
+## 42                                                       Broxtowe - Broxtowe - Winner
+## 43                                             Isle of Wight - Isle of Wight - Winner
+## 44                                                       Aberavon - Aberavon - Winner
+## 45                                           Aberdeen North - Aberdeen North - Winner
+## 46                                             Bradford East - Bradford East - Winner
+## 47                                               Bristol West - Bristol West - Winner
+## 48                             Cambourne and Redruth - Cambourne and Redruth - Winner
+## 49                     Cardiff South and Penarth - Cardiff South and Penarth - Winner
+## 50                                                   Ceredigion - Ceredigion - Winner
+## 51                                                         Cheadle - Cheadle - Winner
+## 52                                                         Halifax - Halifax - Winner
+## 53                             Heywood and Middleton - Heywood and Middleton - Winner
+## 54                                             Norwich South - Norwich South - Winner
+## 55                           St Austell and Newquay - St Austell and Newquay - Winner
 ##    Matched
 ## 1     3049
 ## 2     2654
@@ -108,34 +116,34 @@ data_matched_constituencies
 ## 13     102
 ## 14      94
 ## 15      81
-## 16      70
+## 16      80
 ## 17      70
 ## 18      62
 ## 19      61
 ## 20      60
-## 21      56
-## 22      52
-## 23      48
-## 24      40
-## 25      32
-## 26      30
+## 21      59
+## 22      56
+## 23      52
+## 24      48
+## 25      40
+## 26      32
 ## 27      30
-## 28      26
-## 29      22
+## 28      30
+## 29      26
 ## 30      22
-## 31      20
+## 31      22
 ## 32      20
 ## 33      20
-## 34      14
-## 35      10
+## 34      20
+## 35      14
 ## 36      10
-## 37       8
+## 37      10
 ## 38       8
 ## 39       8
-## 40       6
+## 40       8
 ## 41       6
-## 42       5
-## 43       4
+## 42       6
+## 43       5
 ## 44       4
 ## 45       4
 ## 46       4
@@ -147,7 +155,41 @@ data_matched_constituencies
 ## 52       4
 ## 53       4
 ## 54       4
+## 55       4
 ```
+
+```r
+major_constituency_markets_history_plots
+```
+
+```
+## $`South Thanet - South Thanet - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-1.png) 
+
+```
+## 
+## $`Brighton Kemptown - Brighton Kemptown - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-2.png) 
+
+```
+## 
+## $`Rochester and Strood - Rochester and Strood - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-3.png) 
+
+```
+## 
+## $`Brighton Pavilion - Brighton Pavilion - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-4.png) 
+
+
 
 ### Other Markets
 
@@ -199,15 +241,16 @@ data_matched_other
 ## 37                   Northern Ireland - Most Seats Northern Ireland
 ## 38                                 UK Seat Totals - SNP Seats Total
 ## 39                                         Wales - Most Seats Wales
+## 40                                   Wales - Plaid Cymru Under/Over
 ##    Matched
-## 1   958924
-## 2   918515
-## 3   133360
-## 4    72649
-## 5    48177
+## 1   962185
+## 2   919949
+## 3   133371
+## 4    72654
+## 5    48546
 ## 6    33621
 ## 7    24483
-## 8    17112
+## 8    17200
 ## 9    16592
 ## 10   13419
 ## 11   11434
@@ -221,11 +264,11 @@ data_matched_other
 ## 19    3011
 ## 20    2827
 ## 21    2547
-## 22    2521
+## 22    2531
 ## 23    1996
 ## 24    1982
 ## 25    1751
-## 26    1482
+## 26    1558
 ## 27    1277
 ## 28     982
 ## 29     478
@@ -239,6 +282,7 @@ data_matched_other
 ## 37      11
 ## 38      10
 ## 39      10
+## 40       0
 ```
 
 
