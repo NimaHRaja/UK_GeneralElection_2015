@@ -16,6 +16,7 @@ source("Markets_Name_Matched_Analysis.R")
 ```
 
 ```r
+source("Markets_History_Graph.R")
 setwd(root_dir)
 ```
 
@@ -403,6 +404,74 @@ major_other_markets_history_plots_withoutErrorbar
 
 ![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-9.png) 
 
+Same graphs with errorbar:
+
+
+```r
+major_other_markets_history_plots_withErrorbar
+```
+
+```
+## $`2015 UK General Election - Overall Majority`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-8-1.png) 
+
+```
+## 
+## $`2015 UK General Election - Most Seats`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-8-2.png) 
+
+```
+## 
+## $`UK Seat Totals - UKIP Seats Total`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-8-3.png) 
+
+```
+## 
+## $`Prime Minister after Cameron - Prime Minister after Cameron`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-8-4.png) 
+
+```
+## 
+## $`2015 UK General Election - Next Government`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-8-5.png) 
+
+```
+## 
+## $`2015 UK General Election - Party Leaders`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-8-6.png) 
+
+```
+## 
+## $`2015 UK General Election - Prime Minister After General Election`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-8-7.png) 
+
+```
+## 
+## $`Next Party Leaders - Next Conservative Leader`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-8-8.png) 
+
+```
+## 
+## $`Scotland - Most Seats Scotland`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-8-9.png) 
 
 # ternary constituencies
 

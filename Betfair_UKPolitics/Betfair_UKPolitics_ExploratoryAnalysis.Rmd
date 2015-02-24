@@ -14,6 +14,7 @@ Some Exploratory Analysis of Betfair_UKPolitics_Markets.
 root_dir <- getwd()
 setwd("./Codes/Exploratory Analysis/")
 source("Markets_Name_Matched_Analysis.R")
+source("Markets_History_Graph.R")
 setwd(root_dir)
 ```
 
