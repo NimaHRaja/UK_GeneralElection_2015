@@ -47,50 +47,50 @@ data_matched_constituencies
 ##                                                                                Market
 ## 1                                                South Thanet - South Thanet - Winner
 ## 2                                      Brighton Kemptown - Brighton Kemptown - Winner
-## 3                                Rochester and Strood - Rochester and Strood - Winner
-## 4                                      Brighton Pavilion - Brighton Pavilion - Winner
-## 5                                                            Hendon - Hendon - Winner
-## 6                                        Sheffield Hallam - Sheffield Hallam - Winner
+## 3                                        Sheffield Hallam - Sheffield Hallam - Winner
+## 4                                Rochester and Strood - Rochester and Strood - Winner
+## 5                                      Brighton Pavilion - Brighton Pavilion - Winner
+## 6                                                            Hendon - Hendon - Winner
 ## 7                                                          Falkirk - Falkirk - Winner
 ## 8                                                            Gordon - Gordon - Winner
 ## 9                                                        Thurrock - Thurrock - Winner
-## 10                                       Sutton and Cheam - Sutton and Cheam - Winner
-## 11                                             Great Grimsby - Great Grimsby - Winner
-## 12                                                           Yeovil - Yeovil - Winner
-## 13                                         Glasgow Central - Glasgow Central - Winner
-## 14                                           Great Yarmouth - Great Yarmouth - Winner
-## 15                                                   Eastbourne - Eastbourne - Winner
-## 16                                           Stockton South - Stockton South - Winner
-## 17 Inverness Nairn Badenoch Strathspey - Inverness Nairn Badenoch Strathspey - Winner
-## 18                                 East Dunbartonshire - East Dunbartonshire - Winner
-## 19                             Hampstead and Kilburn - Hampstead and Kilburn - Winner
-## 20                                                         Watford - Watford - Winner
-## 21                                                               Hove - Hove - Winner
-## 22                           Holborn and St Pancras - Holborn and St Pancras - Winner
-## 23                                         Argyll and Bute - Argyll and Bute - Winner
-## 24       Cities of London and Westminster - Cities of London and Westminster - Winner
-## 25                                                         Clacton - Clacton - Winner
-## 26                                             Cardiff North - Cardiff North - Winner
-## 27                                               Glasgow East - Glasgow East - Winner
-## 28                                       Portsmouth South - Portsmouth South - Winner
-## 29                                                       Solihull - Solihull - Winner
-## 30                                   Glasgow North East - Glasgow North East - Winner
-## 31                     Mid Dorset and North Poole - Mid Dorset and North Poole Winner
-## 32                                   Airdrie and Shotts - Airdrie and Shotts - Winner
-## 33                                               Dudley North - Dudley North - Winner
-## 34                                                       Ynys Mon - Ynys Mon - Winner
-## 35                                                   Chippenham - Chippenham - Winner
-## 36                                                               Bath - Bath - Winner
-## 37                                     Vale of Glamorgan - Vale of Glamorgan - Winner
-## 38                                               Beaconsfield - Beaconsfield - Winner
-## 39                                                     Cambridge - Cambridge - Winner
-## 40                                   Southampton Itchen - Southampton Itchen - Winner
-## 41                                         Brigg and Goole - Brigg and Goole - Winner
-## 42                                                       Broxtowe - Broxtowe - Winner
-## 43                                             Isle of Wight - Isle of Wight - Winner
-## 44                                                       Aberavon - Aberavon - Winner
-## 45                                           Aberdeen North - Aberdeen North - Winner
-## 46                                             Bradford East - Bradford East - Winner
+## 10                                             Great Grimsby - Great Grimsby - Winner
+## 11                                       Sutton and Cheam - Sutton and Cheam - Winner
+## 12                                                               Hove - Hove - Winner
+## 13                                                           Yeovil - Yeovil - Winner
+## 14                                             Bradford East - Bradford East - Winner
+## 15                                         Glasgow Central - Glasgow Central - Winner
+## 16                                           Great Yarmouth - Great Yarmouth - Winner
+## 17                                                         Watford - Watford - Winner
+## 18                                                   Eastbourne - Eastbourne - Winner
+## 19                                           Stockton South - Stockton South - Winner
+## 20                           Holborn and St Pancras - Holborn and St Pancras - Winner
+## 21 Inverness Nairn Badenoch Strathspey - Inverness Nairn Badenoch Strathspey - Winner
+## 22                                 East Dunbartonshire - East Dunbartonshire - Winner
+## 23                             Hampstead and Kilburn - Hampstead and Kilburn - Winner
+## 24                                         Argyll and Bute - Argyll and Bute - Winner
+## 25                                                               Bath - Bath - Winner
+## 26       Cities of London and Westminster - Cities of London and Westminster - Winner
+## 27                                   Southampton Itchen - Southampton Itchen - Winner
+## 28                                                         Clacton - Clacton - Winner
+## 29                                             Cardiff North - Cardiff North - Winner
+## 30                                               Glasgow East - Glasgow East - Winner
+## 31                                       Portsmouth South - Portsmouth South - Winner
+## 32                                                       Solihull - Solihull - Winner
+## 33                                   Glasgow North East - Glasgow North East - Winner
+## 34                     Mid Dorset and North Poole - Mid Dorset and North Poole Winner
+## 35                                   Airdrie and Shotts - Airdrie and Shotts - Winner
+## 36                                                   Chippenham - Chippenham - Winner
+## 37                                               Dudley North - Dudley North - Winner
+## 38                                                       Ynys Mon - Ynys Mon - Winner
+## 39                                     Vale of Glamorgan - Vale of Glamorgan - Winner
+## 40                                               Beaconsfield - Beaconsfield - Winner
+## 41                                                     Cambridge - Cambridge - Winner
+## 42                                         Brigg and Goole - Brigg and Goole - Winner
+## 43                                                       Broxtowe - Broxtowe - Winner
+## 44                                             Isle of Wight - Isle of Wight - Winner
+## 45                                                       Aberavon - Aberavon - Winner
+## 46                                           Aberdeen North - Aberdeen North - Winner
 ## 47                                               Bristol West - Bristol West - Winner
 ## 48                             Cambourne and Redruth - Cambourne and Redruth - Winner
 ## 49                     Cardiff South and Penarth - Cardiff South and Penarth - Winner
@@ -101,50 +101,50 @@ data_matched_constituencies
 ## 54                                             Norwich South - Norwich South - Winner
 ## 55                           St Austell and Newquay - St Austell and Newquay - Winner
 ##    Matched
-## 1     3049
-## 2     2654
-## 3     1606
-## 4     1300
-## 5     1000
-## 6      775
+## 1     5528
+## 2     3136
+## 3     1842
+## 4     1653
+## 5     1409
+## 6     1000
 ## 7      672
 ## 8      568
 ## 9      327
-## 10     170
-## 11     150
-## 12     138
-## 13     102
-## 14      94
-## 15      81
-## 16      80
-## 17      70
-## 18      62
-## 19      61
-## 20      60
-## 21      59
-## 22      56
-## 23      52
-## 24      48
-## 25      40
-## 26      32
-## 27      30
-## 28      30
-## 29      26
-## 30      22
-## 31      22
-## 32      20
-## 33      20
-## 34      20
-## 35      14
-## 36      10
-## 37      10
-## 38       8
-## 39       8
+## 10     250
+## 11     170
+## 12     160
+## 13     138
+## 14     110
+## 15     102
+## 16      94
+## 17      86
+## 18      81
+## 19      80
+## 20      76
+## 21      70
+## 22      62
+## 23      61
+## 24      52
+## 25      48
+## 26      48
+## 27      43
+## 28      40
+## 29      32
+## 30      30
+## 31      30
+## 32      26
+## 33      22
+## 34      22
+## 35      20
+## 36      20
+## 37      20
+## 38      20
+## 39      10
 ## 40       8
-## 41       6
+## 41       8
 ## 42       6
-## 43       5
-## 44       4
+## 43       6
+## 44       5
 ## 45       4
 ## 46       4
 ## 47       4
@@ -158,6 +158,8 @@ data_matched_constituencies
 ## 55       4
 ```
 
+Let's take a look at the history of (implied) probability of various outcomes of these constituencies. Here I use $\frac{1}{2}(\frac{1}{BACK}+\frac{1}{Lay})$ as "Probability".
+
 ```r
 major_constituency_markets_history_plots_withoutErrorbar
 ```
@@ -166,28 +168,37 @@ major_constituency_markets_history_plots_withoutErrorbar
 ## $`South Thanet - South Thanet - Winner`
 ```
 
-![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-1.png) 
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-4-1.png) 
 
 ```
 ## 
 ## $`Brighton Kemptown - Brighton Kemptown - Winner`
 ```
 
-![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-2.png) 
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-4-2.png) 
+
+```
+## 
+## $`Sheffield Hallam - Sheffield Hallam - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-4-3.png) 
 
 ```
 ## 
 ## $`Rochester and Strood - Rochester and Strood - Winner`
 ```
 
-![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-3.png) 
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-4-4.png) 
 
 ```
 ## 
 ## $`Brighton Pavilion - Brighton Pavilion - Winner`
 ```
 
-![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-4.png) 
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-4-5.png) 
+
+How accurate those numbers are? We also need a measure of "error". Market implies that the probability is something in between $\frac{1}{BACK}$ and $\frac{1}{LAY}$. Let's use those extremes to add errorbars to the graphs:
 
 ```r
 major_constituency_markets_history_plots_withErrorbar
@@ -197,34 +208,41 @@ major_constituency_markets_history_plots_withErrorbar
 ## $`South Thanet - South Thanet - Winner`
 ```
 
-![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-5.png) 
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-5-1.png) 
 
 ```
 ## 
 ## $`Brighton Kemptown - Brighton Kemptown - Winner`
 ```
 
-![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-6.png) 
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-5-2.png) 
+
+```
+## 
+## $`Sheffield Hallam - Sheffield Hallam - Winner`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-5-3.png) 
 
 ```
 ## 
 ## $`Rochester and Strood - Rochester and Strood - Winner`
 ```
 
-![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-7.png) 
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-5-4.png) 
 
 ```
 ## 
 ## $`Brighton Pavilion - Brighton Pavilion - Winner`
 ```
 
-![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-3-8.png) 
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-5-5.png) 
 
-
+Huge errorbars. Markets are not liquid enough (yet). The good news is the most important outcomes have smallish errorbars (like UKIP@South_Thanet or LibDem@Sheffield_hallam). Time to switch to ternary graphs?
 
 ### Other Markets
 
-List of other Markets:
+Let's take a look at non-constituency markets:
 
 
 ```r
@@ -239,83 +257,151 @@ data_matched_other
 ## 4       Prime Minister after Cameron - Prime Minister after Cameron
 ## 5                        2015 UK General Election - Next Government
 ## 6                          2015 UK General Election - Party Leaders
-## 7                     Next Party Leaders - Next Conservative Leader
-## 8  2015 UK General Election - Prime Minister After General Election
+## 7  2015 UK General Election - Prime Minister After General Election
+## 8                     Next Party Leaders - Next Conservative Leader
 ## 9                                    Scotland - Most Seats Scotland
-## 10                              UK Seat Totals - UKIP U/O 2.5 Seats
-## 11                              UK Seat Totals - UKIP Seats Total 2
+## 10                              UK Seat Totals - UKIP Seats Total 2
+## 11                              UK Seat Totals - UKIP U/O 2.5 Seats
 ## 12                Next Party Leaders - Next Liberal Democrat Leader
 ## 13                          Next Party Leaders - Next Labour Leader
-## 14                              UK Seat Totals - SNP U/O 35.5 Seats
-## 15                              UK Seat Totals - UKIP U/O 5.5 Seats
+## 14                              UK Seat Totals - UKIP U/O 5.5 Seats
+## 15                              UK Seat Totals - SNP U/O 35.5 Seats
 ## 16                                     England - Most Seats England
 ## 17                   London Mayoral Election 2016 - Winner - Winner
-## 18                              UK Seat Totals - SNP U/O 11.5 Seats
-## 19                                  Leader Exit Dates - Ed Miliband
+## 18                                  Leader Exit Dates - Ed Miliband
+## 19                              UK Seat Totals - SNP U/O 11.5 Seats
 ## 20                             UK Seat Totals - Green U/O 1.5 Seats
 ## 21                             UK Seat Totals - Lib Dem Seats Total
 ## 22                              UK Seat Totals - SNP U/O 25.5 Seats
 ## 23                        2015 UK General Election - Electoral Bias
-## 24                       2015 UK General Election - Electoral Bias?
-## 25                        UK Seat Totals - Conservative Seats Total
+## 24                        UK Seat Totals - Conservative Seats Total
+## 25                       2015 UK General Election - Electoral Bias?
 ## 26                              UK Seat Totals - Lib Dem Under/Over
 ## 27                                   Leader Exit Dates - Nick Clegg
 ## 28                                Leader Exit Dates - David Cameron
 ## 29                              UK Seat Totals - Labour Seats Total
 ## 30                             UK Seat Totals - Green U/O 0.5 Seats
-## 31                         UK Seat Totals - Conservative Under/Over
-## 32           2015 UK General Election - Two General Elections 2015?
+## 31           2015 UK General Election - Two General Elections 2015?
+## 32                         UK Seat Totals - Conservative Under/Over
 ## 33                              Cabinet Exit Dates - Prime Minister
-## 34                               UK Seat Totals - Labour Under/Over
-## 35                                  Cabinet Exit Dates - Chancellor
-## 36                         2015 UK General Election - Voter Turnout
+## 34                         2015 UK General Election - Voter Turnout
+## 35                               UK Seat Totals - Labour Under/Over
+## 36                                  Cabinet Exit Dates - Chancellor
 ## 37                   Northern Ireland - Most Seats Northern Ireland
 ## 38                                 UK Seat Totals - SNP Seats Total
 ## 39                                         Wales - Most Seats Wales
 ## 40                                   Wales - Plaid Cymru Under/Over
 ##    Matched
-## 1   962185
-## 2   919949
-## 3   133371
-## 4    72654
-## 5    48546
-## 6    33621
-## 7    24483
-## 8    17200
-## 9    16592
-## 10   13419
-## 11   11434
-## 12    9339
-## 13    8176
-## 14    4617
-## 15    4545
-## 16    3808
-## 17    3808
-## 18    3305
-## 19    3011
-## 20    2827
-## 21    2547
-## 22    2531
-## 23    1996
-## 24    1982
-## 25    1751
-## 26    1558
-## 27    1277
-## 28     982
-## 29     478
+## 1  1060583
+## 2  1000915
+## 3   142433
+## 4    73587
+## 5    55864
+## 6    33999
+## 7    29023
+## 8    24602
+## 9    18560
+## 10   14698
+## 11   13978
+## 12    9357
+## 13    8234
+## 14    5051
+## 15    4933
+## 16    4658
+## 17    3811
+## 18    3465
+## 19    3305
+## 20    2871
+## 21    2800
+## 22    2544
+## 23    2273
+## 24    2128
+## 25    1982
+## 26    1805
+## 27    1283
+## 28    1077
+## 29     558
 ## 30     469
-## 31     238
-## 32     193
-## 33     105
-## 34      96
-## 35      40
-## 36      24
-## 37      11
-## 38      10
+## 31     267
+## 32     238
+## 33     113
+## 34     104
+## 35      96
+## 36      48
+## 37      20
+## 38      18
 ## 39      10
 ## 40       0
 ```
 
+Let's take a look at the dynamics of the major ones.
+
+
+```r
+major_other_markets_history_plots_withoutErrorbar
+```
+
+```
+## $`2015 UK General Election - Overall Majority`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-1.png) 
+
+```
+## 
+## $`2015 UK General Election - Most Seats`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-2.png) 
+
+```
+## 
+## $`UK Seat Totals - UKIP Seats Total`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-3.png) 
+
+```
+## 
+## $`Prime Minister after Cameron - Prime Minister after Cameron`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-4.png) 
+
+```
+## 
+## $`2015 UK General Election - Next Government`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-5.png) 
+
+```
+## 
+## $`2015 UK General Election - Party Leaders`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-6.png) 
+
+```
+## 
+## $`2015 UK General Election - Prime Minister After General Election`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-7.png) 
+
+```
+## 
+## $`Next Party Leaders - Next Conservative Leader`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-8.png) 
+
+```
+## 
+## $`Scotland - Most Seats Scotland`
+```
+
+![](Betfair_UKPolitics_ExploratoryAnalysis_files/figure-html/unnamed-chunk-7-9.png) 
 
 
 # ternary constituencies

@@ -31,21 +31,39 @@ Lots of Constituency Markets are not active yet. Just `r dim(data_matched_consti
 
 ```{r}
 data_matched_constituencies
+```
+
+Let's take a look at the history of (implied) probability of various outcomes of these constituencies. Here I use $\frac{1}{2}(\frac{1}{BACK}+\frac{1}{Lay})$ as "Probability".
+```{r}
 major_constituency_markets_history_plots_withoutErrorbar
+```
+
+How accurate those numbers are? We also need a measure of "error". Market implies that the probability is something in between $\frac{1}{BACK}$ and $\frac{1}{LAY}$. Let's use those extremes to add errorbars to the graphs:
+```{r}
 major_constituency_markets_history_plots_withErrorbar
 ```
 
-
+Huge errorbars. Markets are not liquid enough (yet). The good news is the most important outcomes have smallish errorbars (like UKIP@South_Thanet or LibDem@Sheffield_hallam). Time to switch to ternary graphs?
 
 ### Other Markets
 
-List of other Markets:
+Let's take a look at non-constituency markets:
 
 ```{r}
 data_matched_other
 ```
 
+Let's take a look at the dynamics of the major ones.
 
+```{r}
+major_other_markets_history_plots_withoutErrorbar
+```
+
+Same graphs with errorbar:
+
+```{r}
+major_other_markets_history_plots_withErrorbar
+```
 
 # ternary constituencies
 

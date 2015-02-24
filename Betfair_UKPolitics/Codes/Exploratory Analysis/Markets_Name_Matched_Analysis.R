@@ -133,3 +133,21 @@ data_matched_other <-
         c("Market", "Matched")]
 
 row.names(data_matched_other) <- NULL
+
+major_other_markets <- 
+    subset(data_matched_other, Matched > 18000, Market)
+
+major_other_markets_history_plots_withoutErrorbar <-  
+    apply(major_other_markets, 1, function(x) 
+        Get_Prob_History_Plot(x["Market"],FALSE))
+
+
+names(major_other_markets_history_plots_withoutErrorbar) <- 
+    major_other_markets$Market
+
+major_other_markets_history_plots_withErrorbar <-  
+    apply(major_other_markets, 1, function(x) 
+        Get_Prob_History_Plot(x["Market"],TRUE))
+
+names(major_other_markets_history_plots_withErrorbar) <- 
+    major_other_markets$Market
