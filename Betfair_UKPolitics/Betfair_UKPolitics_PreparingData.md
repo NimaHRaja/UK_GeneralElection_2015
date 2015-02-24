@@ -69,7 +69,7 @@ head(read.table("./raw_data/Betfair_UKPolitics_odds.csv", sep = "\t"))
 Some Markets had slightly different names when I started collecting data (e.g. *2015 UK General Election - Overall Majority* used to *Next UK General Election - Overall Majority*) 
 **Clean_UKPolitics_Odds_Data_Market_Names_Tests_Before_Cleaning.R** runs some tests to find them.
 
-**Market_Names_Replacements.csv** contains a list of "bad" names (first column) to be replace with "good" ones (second column). It looks like:
+**Market_Names_Replacements.csv** contains a list of "bad" names (first column) to be replaced by "good" ones (second column). It looks like:
 
 
 ```r
@@ -103,8 +103,8 @@ source("Clean_UKPolitics_Odds_Data.R")
 ```
 
 ```
-## [1] "Tot_Markets_Before =  747"
-## [1] "Tot_Markets_After =  689"
+## [1] "Tot_Markets_Before =  748"
+## [1] "Tot_Markets_After =  690"
 ```
 
 ```r
@@ -134,18 +134,18 @@ head(read.csv("Betfair_UKPolitics_Odds_History.csv", sep = ","))
 ```
 
 ```
-##                                       Market           date_char
-## 1 2015 UK General Election - Electoral Bias? 01/02/2015 08:27:46
-## 2 2015 UK General Election - Electoral Bias? 01/02/2015 08:27:46
-## 3 2015 UK General Election - Electoral Bias? 01/02/2015 08:27:46
-## 4 2015 UK General Election - Electoral Bias? 01/02/2015 08:27:46
-## 5 2015 UK General Election - Electoral Bias? 02/02/2015 11:52:00
-## 6 2015 UK General Election - Electoral Bias? 02/02/2015 11:52:00
-##                          Outcome  Back   Lay Matched
-## 1  Con more votes Con more seats  1.94  2.14    1681
-## 2  Lab more votes Lab more seats  3.10  5.00    1681
-## 3 Con fewer votes Con more seats 10.00 60.00    1681
-## 4 Lab fewer votes Lab more seats  3.15 75.00    1681
-## 5  Con more votes Con more seats  1.94  2.16    1681
-## 6 Lab fewer votes Lab more seats  3.70 29.00    1681
+##                                      Market           date_char
+## 1 2015 UK General Election - Electoral Bias 14/02/2015 11:55:38
+## 2 2015 UK General Election - Electoral Bias 14/02/2015 11:55:38
+## 3 2015 UK General Election - Electoral Bias 14/02/2015 11:55:38
+## 4 2015 UK General Election - Electoral Bias 14/02/2015 11:55:38
+## 5 2015 UK General Election - Electoral Bias 14/02/2015 20:42:21
+## 6 2015 UK General Election - Electoral Bias 14/02/2015 20:42:21
+##                          Outcome  Back  Lay Matched
+## 1 Lab fewer votes Lab more seats  2.46  6.2    1986
+## 2 Con fewer votes Con more seats 12.00 60.0    1986
+## 3  Lab more votes Lab more seats  3.75  4.4    1986
+## 4  Con more votes Con more seats  1.91  2.3    1986
+## 5 Con fewer votes Con more seats 12.00 60.0    1996
+## 6  Lab more votes Lab more seats  3.80  4.4    1996
 ```
