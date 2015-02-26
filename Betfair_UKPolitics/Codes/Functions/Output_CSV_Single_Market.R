@@ -1,4 +1,4 @@
-Single_Market_CSV_Output <- function(data, CSV_Output){
+Output_CSV_Single_Market <- function(data){
     
     
     data_outcome <- 
@@ -24,5 +24,5 @@ Single_Market_CSV_Output <- function(data, CSV_Output){
     
     row.names(data_outcome) <- NULL
     
-    write.csv(data_outcome, CSV_Output)
+    data_outcome
 }
