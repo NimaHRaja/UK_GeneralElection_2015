@@ -1,0 +1,27 @@
+File	Test	Documentation
+README.md	Done	Done
+Betfair_UKPolitics_Odds_History.csv		
+Analyse_UKPolitics_Odds_Data_General.R		
+Markets_History_Graph.R		
+Markets_Name_Matched_Analysis.R		
+Single_Market_Analysis.R		
+Single_Market_Ternary_snapshot.R		
+Get_3Way_Odds.R		
+Get_Convex_Hull.R		
+Get_Prob_History_Plot.R		
+Get_Ternary_Diagram.R		
+List_of_SubMarkets.R	Done	Done
+Load_Data.R		
+Load_Libraries.R	Done	Done
+Single_Market_Classic_Graph_Output.R		
+Single_Market_CSV_Output.R		
+Single_Market_Ternary_Animated_Output.R		
+Clean_UKPolitics_Odds_Data.R		
+Clean_UKPolitics_Odds_Data_Market_Names_Tests_Before_Cleaning.R		
+Get_list_of_Betfair_UKPolitics_Markets.R	Done	Done
+Betfair_data_parse.sln		
+Betfair_UKPolitics_odds.csv		
+list_of_Betfair_UKPolitics_Markets.txt		
+Market_Names_Replacements.csv		
+Betfair_UKPolitics_ExploratoryAnalysis.Rmd		
+Betfair_UKPolitics_Preprocessing.Rmd		
