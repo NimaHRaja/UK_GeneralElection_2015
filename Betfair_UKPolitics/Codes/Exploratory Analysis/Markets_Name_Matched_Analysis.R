@@ -1,13 +1,11 @@
 # Load Libraries
 source("../Functions/Load_Libraries.R")
 Load_Libraries("ggplot2")
-#######################################################################
+
 # Load Data
 source("../Functions/Load_Data.R")
 
-#######################################################################
 # Load Functions
-
 source("../Functions/Get_Prob_History_Plot.R")
 #######################################################################
 

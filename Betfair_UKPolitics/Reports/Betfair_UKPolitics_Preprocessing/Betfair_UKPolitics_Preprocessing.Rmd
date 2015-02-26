@@ -22,7 +22,7 @@ As the markets don't appear (or disappear) everyday, I only run the following (c
 ```
 
 The output file looks like:
-```{r}
+```{r Markets Sample}
 head(read.csv("../../raw_data/list_of_Betfair_UKPolitics_Markets.txt", 
               header = FALSE))
 ```
@@ -36,7 +36,7 @@ For each outcome of each market, the code returns odds and amount to bet for up 
 For each Market, the code also returns total matched value, i.e. the sum of all bids and asks that have successfully been matched.
 
 the output looks like:
-```{r}
+```{r Raw Data Sample}
 head(read.table("../../raw_data/Betfair_UKPolitics_odds.csv", sep = "\t"))
 ```
 
@@ -47,13 +47,13 @@ Some Markets had slightly different names when I started collecting data (e.g. *
 
 **Market_Names_Replacements.csv** contains a list of "bad" names (first column) to be replaced by "good" ones (second column). It looks like:
 
-```{r}
+```{r Market Names Replacements Sample}
 head(read.table("../../raw_data/Market_Names_Replacements.csv", sep = "\t"))
 ```
 
 **Clean_UKPolitics_Odds_Data.R** reads **Betfair_UKPolitics_odds.csv** and replaces the bad names with the good ones according to **Market_Names_Replacements.csv**
 
-```{r}
+```{r Cleaning Market Names}
 root_dir <- getwd()
 setwd("../../Codes/Preprocessing Data/")
 source("Clean_UKPolitics_Odds_Data.R")
@@ -77,6 +77,6 @@ Done! **Betfair_UKPolitics_Odds_History.csv** is good to go. it has 6 columns:
 
 and looks like
 
-```{r}
+```{r Processed Data Sample}
 head(read.csv("../../Betfair_UKPolitics_Odds_History.csv", sep = ","))
 ```
