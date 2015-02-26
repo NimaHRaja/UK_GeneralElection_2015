@@ -1,6 +1,18 @@
-Single_Market_Ternary_Animated_Output <- 
+# Gets instructions for generating an animated GIF
+# Creates number_of_diagrams Plots and saves them in /Plots
+# Converts the PNG files into an animated GIF
+# Deletes all PNG files and /Plots folder
+
+
+# Load Functions
+source("../Functions/Get_Ternary_Diagram.R")
+
+
+Output_GIF_Ternary_Prob_History <- 
     function(
-        data, 
+        data,
+        number_of_diagrams,
+        delay,
         first_date, 
         last_date, 
         main_outputs, 
@@ -9,6 +21,7 @@ Single_Market_Ternary_Animated_Output <-
         labels)
         
     {
+        
         
         # Create plots
         data_dates <- unique(data$date)
