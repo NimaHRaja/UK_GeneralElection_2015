@@ -1,5 +1,5 @@
 ---
-title: "Betfair_UKPolitics_PreparingData"
+title: "Betfair_UKPolitics_Preprocessing"
 output:
   html_document:
     keep_md: yes
@@ -15,10 +15,10 @@ Here I explain how I get (and clean) the data from all Betfair's "UK Politics" M
 **Get_list_of_Betfair_UKPolitics_Markets.R** recursively retrieves a list of all the market that [this page](http://www.betfair.com/exchange/?nodeId=MENU:2707982) is a parent or (great)grandparent of.  
 As the markets don't appear (or disappear) everyday, I only run the following (commented out) chunk once or twice a week.
 ```{r}
-# root_dir <- getwd()
-# setwd("./Codes/Preparing Data/")
-# source("Get_list_of_Betfair_UKPolitics_Markets.R")
-# setwd(root_dir)
+root_dir <- getwd()
+setwd("../../Codes/Preprocessing Data/")
+source("Get_list_of_Betfair_UKPolitics_Markets.R")
+setwd(root_dir)
 ```
 
 The output file looks like:
