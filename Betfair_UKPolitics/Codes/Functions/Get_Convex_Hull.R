@@ -24,8 +24,8 @@ Get_Convex_Hull <- function(data){
     names(points3) <- c("Var3", "Var2", "Var1")
     points <- rbind(points, points3)
     
+    points[chull(points),]
     
-    points
     
 }
 

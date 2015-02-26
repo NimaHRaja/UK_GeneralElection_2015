@@ -1,7 +1,0 @@
-C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\HtmlAgilityPack.dll
-C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Debug\HtmlAgilityPack.xml
-C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
-C:\Users\Nima\AppData\Local\Temporary Projects\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
