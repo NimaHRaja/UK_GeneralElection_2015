@@ -1,3 +1,5 @@
+# Aggregates Odds for all outcomes other than main_outcomes.
+
 Get_3Way_Odds <- function(data, main_outcomes, other_outcome){
     
     data_temp <- 

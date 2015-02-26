@@ -1,3 +1,6 @@
+# Get 3ways Back and Lay and returns the Convex hull of all (P1,P2,P3)s that
+# satisfy inequalities where P1+P2+p3 = 1
+
 Get_Convex_Hull <- function(data){
     
     get_possible_points <- function(prob){
@@ -28,5 +31,3 @@ Get_Convex_Hull <- function(data){
     
     
 }
-
-

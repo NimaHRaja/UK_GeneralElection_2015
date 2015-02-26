@@ -1,6 +1,12 @@
+# Returns a Ternary Plot demonstrating the convex hull of all possible (P1,P2,P3)s
+
 # Load Libraries
 source("../Functions/Load_Libraries.R")
 Load_Libraries("ggtern")
+
+# Load Functions
+source("../Functions/Get_Convex_Hull.R")
+
 
 Get_Ternary_Diagram <- function(data, labels, title){
     
