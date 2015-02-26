@@ -1,3 +1,5 @@
+# Recieves a list of libraries and loads them
+
 Load_Libraries <- function(list_of_packages){
     
     
