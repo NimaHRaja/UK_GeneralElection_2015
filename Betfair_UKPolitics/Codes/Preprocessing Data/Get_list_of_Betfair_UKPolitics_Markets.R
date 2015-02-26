@@ -14,8 +14,7 @@ output <- list()
 
 
 
-url <-"https://www.betfair.com/exchange/?nodeId=MENU:27276908"
-# url <-"https://www.betfair.com/exchange/?nodeId=MENU:2707982"
+url <-"https://www.betfair.com/exchange/?nodeId=MENU:2707982"
 output <- List_of_SubMarkets(url, output)
 output <- paste("http://www.betfair.com",unlist(output), sep = "")
 
