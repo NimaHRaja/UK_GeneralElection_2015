@@ -1,3 +1,5 @@
+# Returns all Odds data for a given Market to be written into a CSV file
+
 Output_CSV_Single_Market <- function(data){
     
     

@@ -1,3 +1,5 @@
+# Returns "prob" plot for a given market with/without errorbars
+
 Output_Plot_Prob_History <- function(market, errorbar)
 {
     
