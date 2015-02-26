@@ -1,7 +1,7 @@
 # Gets a URL, Parses the HTML, uses an inner function to iterate over the links 
 # inside the HTML and recursively returns all (grand)children of the original url.
 
-List_of_SubMarkets <- function(url, output){
+Get_List_of_SubMarkets <- function(url, output){
     
     List_of_SubLinks <- function(url){
         html_page <- getURL(url, ssl.verifypeer = FALSE)
