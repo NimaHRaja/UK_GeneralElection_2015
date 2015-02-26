@@ -1,7 +1,5 @@
 source("../Functions/Get_3Way_Odds.R")
-source("../Functions/Get_Convex_Hull.R")
 source("../Functions/Get_Ternary_Diagram.R")
-source("../Functions/Load_Data.R")
 
 
 

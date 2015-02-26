@@ -3,7 +3,7 @@
 # list_of_Betfair_UKPolitics_Markets.txt
 
 source("../Functions/Load_Libraries.R")
-source("../Functions/List_of_SubMarkets.R")
+source("../Functions/Get_List_of_SubMarkets.R")
 
 
 Load_Libraries(c("XML", "RCurl"))
@@ -15,7 +15,7 @@ output <- list()
 
 
 url <-"https://www.betfair.com/exchange/?nodeId=MENU:2707982"
-output <- List_of_SubMarkets(url, output)
+output <- Get_List_of_SubMarkets(url, output)
 output <- paste("http://www.betfair.com",unlist(output), sep = "")
 
 

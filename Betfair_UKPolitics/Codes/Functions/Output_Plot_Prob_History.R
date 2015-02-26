@@ -1,5 +1,8 @@
 # Returns "prob" plot for a given market with/without errorbars
 
+source("../Functions/Load_Libraries.R")
+Load_Libraries("ggplot2")
+
 Output_Plot_Prob_History <- function(market, errorbar)
 {
     
@@ -15,7 +18,8 @@ Output_Plot_Prob_History <- function(market, errorbar)
     plot<-
         ggplot(data = data, aes(x = date , y = Prob, colour = Outcome)) + 
         geom_line() +
-        facet_grid(. ~ Market)
+        facet_grid(. ~ Market) +
+        ylab("(implied) probability (%)")
     
     if (errorbar)
         plot <- plot + geom_errorbar(aes(ymin = ymin, ymax = ymax)) 

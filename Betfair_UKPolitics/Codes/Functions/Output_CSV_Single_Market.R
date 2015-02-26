@@ -1,7 +1,9 @@
 # Returns all Odds data for a given Market to be written into a CSV file
 
+source("../Functions/Load_Libraries.R")
+Load_Libraries("reshape2")
+
 Output_CSV_Single_Market <- function(data){
-    
     
     data_outcome <- 
         melt(data, 
