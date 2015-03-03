@@ -32,7 +32,7 @@ Get_List_of_SubMarkets <- function(url, output){
         sub_links <- List_of_SubLinks(sub_url)
         
         for (sub_link in sub_links){
-            output <- List_of_SubMarkets(sub_link, output)
+            output <- Get_List_of_SubMarkets(sub_link, output)
         }
         
     }
