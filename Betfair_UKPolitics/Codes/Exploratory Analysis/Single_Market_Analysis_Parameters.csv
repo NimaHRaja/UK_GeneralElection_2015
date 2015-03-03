@@ -1,5 +1,5 @@
 Market,CSV,PNG1,PNG2,PNG3,GIF,Main_1,Main_2,Other,Lab_1,Lab_2,Lab_3,Gif_Dot_size,PNG_Dot_Size
-2015 UK General Election - Overall Majority,Majority_Market_Data.csv,Majority_Market_Prob_ErrorbarON.png,Majority_Market_Prob_ErrorbarOFF.png,Majority_Market_Prob_Ternary_Currnet.PNG,Majority_Market_Prob_Animated.gif,Conservative Majority,Labour Majority,No Majority,CON,LAB,NO,8,0
+2015 UK General Election - Overall Majority,Majority_Market_Data.csv,Majority_Market_Prob_ErrorbarON.png,Majority_Market_Prob_ErrorbarOFF.png,Majority_Market_Prob_Ternary_Currnet.PNG,Majority_Market_Prob_Animated.gif,Conservative Majority,Labour Majority,No Majority,CON,LAB,NO,8,8
 UK Seat Totals - UKIP Seats Total,UKIP_Seats_Market_Data.csv,UKIP_Seats_Market_Prob_ErrorbarON.png,UKIP_Seats_Market_Prob_ErrorbarOFF.png,UKIP_Seats_Market_Prob_Ternary_Currnet.PNG,UKIP_Seats_Market_Prob_Animated.gif,None,One to Five,Over Five,None,One to Five,Over 5,8,0
-2015 UK General Election - Most Seats,Most_Seats_Market_Data.csv,Most_Seats_Market_Prob_ErrorbarON.png,Most_Seats_Market_Prob_ErrorbarOFF.png,Most_Seats_Market_Prob_Ternary_Currnet.PNG,Most_Seats_Market_Prob_Animated.gif,Conservative,Labour,Other,CON,LAB,NO,8,0
+2015 UK General Election - Most Seats,Most_Seats_Market_Data.csv,Most_Seats_Market_Prob_ErrorbarON.png,Most_Seats_Market_Prob_ErrorbarOFF.png,Most_Seats_Market_Prob_Ternary_Currnet.PNG,Most_Seats_Market_Prob_Animated.gif,Conservative,Labour,Other,CON,LAB,NO,8,8
 South Thanet - South Thanet - Winner,,,,,,,,,,,,,
