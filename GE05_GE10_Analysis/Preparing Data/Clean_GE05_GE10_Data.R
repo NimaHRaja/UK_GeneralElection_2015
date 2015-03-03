@@ -1,4 +1,4 @@
-# source("../General Functions/Get_Data.R")
+# source("../Functions/Get_Data.R")
 # 
 # ge_2010_act_url <- 
 #     "http://www.electoralcalculus.co.uk/electdata_2010.txt";
