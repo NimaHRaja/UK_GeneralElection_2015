@@ -8,7 +8,8 @@ Get_3Way_Odds <- function(data, main_outcomes, other_outcome){
     
     data_temp[3, c("Back", "Lay")] <-
         1/colSums(1/data[!data$Outcome %in% main_outcomes,
-                                  c("Back", "Lay")])
+                                  c("Back", "Lay")],
+                  na.rm = TRUE)
     
     data_temp[3, "Outcome"] <- other_outcome
     row.names(data_temp) <- NULL
