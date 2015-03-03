@@ -1,85 +1,97 @@
-# Load  Data, Source Functions, and Libraries
+# Load Data, Source Functions, and Libraries
 
-source("../General_Functions/Source_All.R")
+source("../Functions/Load_Data.R")
+source("../Functions/Output_CSV_Single_Market.R")
+source("../Functions/Output_Plot_Prob_History.R")
+source("../Functions/Output_GIF_Ternary_Prob_History.R")
 
-Load_Libraries(c("ggplot2", "ggtern", "reshape2", "stringr"))
+# Choose Parameters
 
+output_choice <- 2
+number_of_diagrams <- 10
+delay <- 5
+first_date <- "2014-07-01 00:00:00"
+last_date <- "2015-02-05 00:00:00"
 
+# Set Other Parameters
+
+first_date <-strptime(first_date, "%Y-%m-%d %H:%M:%s")
+last_date <-strptime(last_date, "%Y-%m-%d %H:%M:%s")
+
+parameters <- read.csv("Single_Market_Analysis_Parameters.csv",
+                       stringsAsFactors = FALSE)
+
+this_market <- parameters[output_choice,1]
+
+csv_output_file <- parameters[output_choice,2]
+png_output_file_1 <- parameters[output_choice,3]
+png_output_file_2 <- parameters[output_choice,4]
+ternary_snapshot <- parameters[output_choice,5]
+gif_output_file <- parameters[output_choice,6]
+
+main_outputs <- list(parameters[output_choice,7],parameters[output_choice,8]); 
+other_outputs <- parameters[output_choice,9];
+labels <- as.character(parameters[output_choice,10:12])
+row.names(labels) <- NULL
+
+gif_dot_size <- parameters[output_choice,13]
+png_dot_size <- parameters[output_choice,14]
 
 ############################################################################
-# Subset Market?
-
-# this_Market <- "UK Seat Totals - UKIP Seats Total"
-this_Market <- "2015 UK General Election - Overall Majority"
-# this_Market <- "2015 UK General Election - Most Seats"
-
-data <- subset(all_odds_data, Market == this_Market)
-
+# Subset Market
+data <- subset(all_odds_data, Market == this_market)
 row.names(data) <- NULL
 
-
-############################################################################
 # Market's data -> CSV
+write.csv(
+    Output_CSV_Single_Market(data), 
+    row.names = FALSE,
+    csv_output_file)
 
-# Single_Market_CSV_Output(data, "UKIP_Seats_Market_Ternary.csv")
-Single_Market_CSV_Output(data, "Majority_Market_Ternary.csv")
-# Single_Market_CSV_Output(data, "Most_Seats_Market_Ternary.csv")
+# Classic Graph -> PNG
 
+png(png_output_file_1, width = 800, height = 400)
+Output_Plot_Prob_History(this_market,TRUE)
+dev.off()
 
+png(png_output_file_2, width = 800, height = 400)
+Output_Plot_Prob_History(this_market,FALSE)
+dev.off()
 
-
-############################################################################
-# Class Graph -> PNG
-
-# Single_Market_Classic_Graph_Output(data, "UKIP_Seats_Market.png")
-Single_Market_Classic_Graph_Output(data, "Majority_Market.png")
-# Single_Market_Classic_Graph_Output(data, "MostSeats_Market.png")
-
-
-############################################################################
 # Ternary Animated -> Gif
 
-# GIF_Output  <- "UKIP_Seats_Prob.gif"
-GIF_Output  <- "Majority_Prob.gif"
-# GIF_Output  <- "MostSeats_Prob.gif"
+Output_GIF_Ternary_Prob_History(data, 
+                                number_of_diagrams,
+                                delay,
+                                gif_dot_size,
+                                first_date, 
+                                last_date, 
+                                main_outputs, 
+                                other_outputs, 
+                                gif_output_file, 
+                                labels)
 
-number_of_diagrams <- 200
-delay <- 5
+# Ternary Snapshot -> PNG
 
-first_date <-strptime("2014-07-01 00:00:00", "%Y-%m-%d %H:%M:%s")
-last_date <-strptime("2015-02-05 00:00:00", "%Y-%m-%d %H:%M:%s")
+data <- subset(data, data$date == max(data$date))
 
-
-# main_outputs <- list("None", "One to Five"); 
-# other_outputs <- "Over Five";
-# labels <- c("None", "One to Five",  "Over 5")
-
-
-
-main_outputs <- list("Conservative Majority", "Labour Majority"); 
-other_outputs <- "No Majority";
-labels <- c("CON", "LAB", "NO")
-
-
-# main_outputs <- list("Conservative", "Labour"); 
-# other_outputs <- "Other";
-# labels <- c("CON", "LAB", "NO")
+data <- Get_3Way_Odds(data,
+                      main_outputs,
+                      other_outputs)
+    
+png(ternary_snapshot, width = 800, height = 400)
+Get_Ternary_Diagram (data, labels, this_market, png_dot_size)
+dev.off()
 
 
-Single_Market_Ternary_Animated_Output(data, 
-                                      first_date, 
-                                      last_date, 
-                                      main_outputs, 
-                                      other_outputs, 
-                                      GIF_Output, 
-                                      labels)
+# Write meta data
+
 
 meta <- data.frame(
     time = as.character(Sys.time()),
     number_of_diagrams = number_of_diagrams,
     delay = delay,
     first_date = first_date,
-    last_date = last_date )
+    last_date = last_date)
 
 write.table(meta, "meta.txt", row.names = FALSE)
-

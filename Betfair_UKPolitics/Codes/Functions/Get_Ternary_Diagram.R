@@ -8,7 +8,7 @@ Load_Libraries("ggtern")
 source("../Functions/Get_Convex_Hull.R")
 
 
-Get_Ternary_Diagram <- function(data, labels, title){
+Get_Ternary_Diagram <- function(data, labels, title, size){
     
     tri_data <- Get_Convex_Hull(data)
     row.names(tri_data) <- NULL 
@@ -17,7 +17,7 @@ Get_Ternary_Diagram <- function(data, labels, title){
     graph <- 
         ggtern(data = tri_data, 
                aes(x = Var1, y = Var2, z = Var3)) + 
-        geom_polygon(color = "Green", size = 0) +
+        geom_polygon(color = "Green", size = size) +
         ggtitle(title) +
         labs(x = labels[1], y = labels[2], z = labels[3]) +
         theme_tern_rgbg(base_size = 18) +

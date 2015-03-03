@@ -18,6 +18,7 @@ Output_GIF_Ternary_Prob_History <-
         data,
         number_of_diagrams,
         delay,
+        size,
         first_date, 
         last_date, 
         main_outputs, 
@@ -60,7 +61,8 @@ Output_GIF_Ternary_Prob_History <-
                 Get_Ternary_Diagram (
                     data_a_date, 
                     labels, 
-                    strftime(saved_date, "%d %b"))
+                    strftime(saved_date, "%d %b %y"),
+                    size)
             
             png_file <- 
                 paste("plots/",
