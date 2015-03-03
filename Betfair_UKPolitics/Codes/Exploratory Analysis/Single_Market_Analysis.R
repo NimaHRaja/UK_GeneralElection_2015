@@ -78,7 +78,7 @@ data <- subset(data, data$date == max(data$date))
 data <- Get_3Way_Odds(data,
                       main_outputs,
                       other_outputs)
-    
+
 png(ternary_snapshot, width = 800, height = 400)
 Get_Ternary_Diagram (data, labels, this_market, png_dot_size)
 dev.off()

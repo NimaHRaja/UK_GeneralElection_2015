@@ -1,0 +1,18 @@
+# GE05_GE10_Analysis
+
+# About
+
+
+
+It's called "the most unpredictable election of recent times". I love numbers. Let's see how it goes.
+
+# Preparing Data
+
+See [appendix](#Preparing_Data)
+
+
+
+# Appendix: Preparing Data
+<a name="Preparing_Data"></a> 
+
+To be added

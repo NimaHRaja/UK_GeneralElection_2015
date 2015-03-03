@@ -5,8 +5,6 @@ Load_Libraries("ggplot2")
 # Load Data
 source("../Functions/Load_Data.R")
 
-# Load Functions
-source("../Functions/Get_Prob_History_Plot.R")
 #######################################################################
 
 # length(unique(all_odds_data$Market))
