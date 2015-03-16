@@ -15,6 +15,7 @@ Get_List_of_SubMarkets <- function(url, output){
     if (!grepl("MENU", url)) {
         
         output <- rbind(output, url)
+        print(url)
         
     } else {
         
