@@ -7,11 +7,12 @@ source("../Functions/Output_GIF_Ternary_Prob_History.R")
 
 # Choose Parameters
 
-output_choice <- 5
+output_choice <- 4
 number_of_diagrams <- 200
 delay <- 5
-first_date <- "2014-07-01 00:00:00"
-last_date <- "2015-03-20 00:00:00"
+# first_date <- "2014-07-01 00:00:00"
+first_date <- "2015-01-10 00:00:00"
+last_date <- "2015-03-30 00:00:00"
 
 # Set Other Parameters
 
