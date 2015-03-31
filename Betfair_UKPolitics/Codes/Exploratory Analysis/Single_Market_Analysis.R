@@ -7,20 +7,20 @@ source("../Functions/Output_GIF_Ternary_Prob_History.R")
 
 # Choose Parameters
 
-output_choice <- 4
-number_of_diagrams <- 200
-delay <- 5
-# first_date <- "2014-07-01 00:00:00"
-first_date <- "2015-01-10 00:00:00"
-last_date <- "2015-03-30 00:00:00"
+output_choice <- 5
 
-# Set Other Parameters
+parameters <- read.csv("Single_Market_Analysis_Parameters.csv",
+                       stringsAsFactors = FALSE)
+
+number_of_diagrams <- parameters[output_choice,15]
+delay <- parameters[output_choice,16]
+
+first_date <- parameters[output_choice,17]
+last_date <- parameters[output_choice,18]
 
 first_date <-strptime(first_date, "%Y-%m-%d %H:%M:%s")
 last_date <-strptime(last_date, "%Y-%m-%d %H:%M:%s")
 
-parameters <- read.csv("Single_Market_Analysis_Parameters.csv",
-                       stringsAsFactors = FALSE)
 
 this_market <- parameters[output_choice,1]
 
