@@ -13,6 +13,6 @@ Get_Banzhaf_Power_Index <- function(data){
     coal_size <- rowSums(maj_comb)
     
     BPI <- colSums(t(apply(maj_comb, 1, function(x) (x-sum(x)+tot_MPs/2)>0)))
-    BPI/sum(BPI)
+    data.frame(Party = names(BPI), BPI = BPI/sum(BPI), row.names = NULL)
         
 }
