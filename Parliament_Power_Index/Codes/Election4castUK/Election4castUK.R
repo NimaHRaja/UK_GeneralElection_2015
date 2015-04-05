@@ -107,6 +107,9 @@ plot2
 dev.off()
 
 # Plot: compare
+
+
+
 # qq <- 
 #     merge(
 #         subset(output1, output1$date == max(output1$date)),
