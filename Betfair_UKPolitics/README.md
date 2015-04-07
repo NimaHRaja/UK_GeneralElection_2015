@@ -43,3 +43,5 @@ Contains the following subfolders:
 /Output Samples
 ---------------
 Some examples of the Exploratory Analysis.
+
+*Last update: 07 APR 15*
