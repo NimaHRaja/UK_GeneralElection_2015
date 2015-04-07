@@ -1,8 +1,6 @@
 Get_ElectoralCalculus_Data <- function(){
     
     options(stringsAsFactors = FALSE)
-    source("Functions/Load_Libraries.R")
-    Load_Libraries(c("XML","reshape2"))
     
     electoralcalculus_URL <- "http://www.electoralcalculus.co.uk/homepage.html"
     electoralcalculus_tables <- readHTMLTable(electoralcalculus_URL)
@@ -27,17 +25,5 @@ Get_ElectoralCalculus_Data <- function(){
     EC_outcomes$Probability <- as.numeric(sub("%", "", EC_outcomes$Probability))
     EC_outcomes$Date <- date
     
-    
-    write.table(EC_predictions, "../EC_predictions.csv", 
-                row.names = FALSE, 
-                col.names = FALSE, 
-                append = TRUE,
-                sep = ",")
-    
-    write.table(EC_outcomes, "../EC_outcomes.csv", 
-                row.names = FALSE, 
-                col.names = FALSE, 
-                append = TRUE,
-                sep = ",")
-    
+   list(EC_predictions, EC_outcomes)       
 }
