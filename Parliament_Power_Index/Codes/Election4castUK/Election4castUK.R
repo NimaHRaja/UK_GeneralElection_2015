@@ -149,7 +149,7 @@ plot3 <- plot3 + scale_fill_manual(
     values = c("Blue", "Brown", "Red", "Yellow", "Black", "Orange"))
 plot3 <- plot3 +labs(y = "4cast Seats(inner) / BPI Seats (Outer)")
 plot3 <- plot3 +labs(x = "")
-plot3 <- plot3 + ggtitle("03 APR 15")
+plot3 <- plot3 + ggtitle("10 APR 15")
 plot3 <- plot3 + theme( axis.text.y=element_blank())
 
 png("4castSeats_BPISeats_PieChart.png", width = 800, height = 400)
