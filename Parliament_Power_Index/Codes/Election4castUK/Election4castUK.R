@@ -3,6 +3,7 @@ source("../Functions/Clean_EF_Tweets.R")
 source("../Functions/Convert_ElectionForecastUK_DF.R")
 source("../Functions/Get_Banzhaf_Power_Index.R")
 source("../Functions/Load_libraries.R")
+source("../Functions/Get_Pie_Predicted_BPI_Chart.R")
 Load_Libraries("ggplot2")
 
 num_tweets <- 100
@@ -27,8 +28,8 @@ EF_Seats_DF <- cbind(EF_Seats_List[[1]],date = EF_tweets$date[1])
 
 for (i in 2:length(EF_Seats_List)){ 
     EF_Seats_DF <-rbind(EF_Seats_DF, 
-                    data.frame(EF_Seats_List[[i]], 
-                               date = EF_tweets$date[i]))   
+                        data.frame(EF_Seats_List[[i]], 
+                                   date = EF_tweets$date[i]))   
 }
 
 write.csv(EF_Seats_DF,"../../Data/Election4castUK/EF_Seats.csv")
@@ -52,8 +53,8 @@ EF_BPI_DF <- cbind(EF_BPI_List[[1]],date = EF_tweets$date[1])
 
 for (i in 2:length(EF_BPI_List)){ 
     EF_BPI_DF <-rbind(EF_BPI_DF, 
-                    data.frame(EF_BPI_List[[i]], 
-                               date = EF_tweets$date[i]))   
+                      data.frame(EF_BPI_List[[i]], 
+                                 date = EF_tweets$date[i]))   
 }
 
 write.csv(EF_BPI_DF,"../../Data/Election4castUK/EF_BPI.csv")
@@ -79,7 +80,7 @@ plot_seats <- plot_seats + geom_line() + geom_point()
 plot_seats <- plot_seats + scale_color_manual (
     values = c("Blue", "Brown", "Red", "Yellow", "Black", "Orange"))
 plot_seats <- plot_seats + 
-    ggtitle("Number of Seats vs. time for different parties (data: Election4castUK)")
+    ggtitle("(Predicted) Number of Seats (data: Election4castUK)")
 
 png("4castSeats_time.png", width = 800, height = 400)
 plot_seats
@@ -106,7 +107,8 @@ plot_BPI <- plot_BPI + geom_line() + geom_point()
 plot_BPI <- plot_BPI + scale_color_manual (
     values = c("Blue", "Brown", "Red", "Yellow", "Black", "Orange"))
 plot_BPI <- plot_BPI + 
-    ggtitle("Effective (using Banzhaf Power Index) Number of Seats vs. time for different parties (data: Election4castUK)")
+    ggtitle("Effective (BPI) Number of Seats (data: Election4castUK)")
+plot_BPI <- plot_BPI + ylab("Seats")
 
 png("BPISeats_time.png", width = 800, height = 400)
 plot_BPI
@@ -117,8 +119,6 @@ dev.off()
 #########################################################################
 # Plot: compare
 
-
-
 # qq <- 
 #     merge(
 #         subset(EF_Seats_DF, EF_Seats_DF$date == max(EF_Seats_DF$date)),
@@ -128,30 +128,36 @@ dev.off()
 # ggplot(qq, aes(x = Seats, y = BPI * 650, color = Party)) + geom_point(size = 10)
 
 
-pie_data <- 
-    subset(data_seats, data_seats$date == max(data_seats$date))[,1:2]
-pie_data$type <- "4cast_Seats"
-
-pie_data_temp <- 
-    subset(data_BPI, data_BPI$date == max(data_BPI$date))[,1:2]
-pie_data_temp$BPI <- pie_data_temp$BPI * 650
-pie_data_temp$type <- "BPI_Seats"
-names(pie_data_temp)[2] <- "Seats"
-
-pie_data <- rbind(pie_data, pie_data_temp)
-pie_data <- pie_data[c(1,4,5,6,3,2,7,10,11,12,9,8),]
-
-plot3 <- 
-    ggplot(data = pie_data, aes(x = factor(type), y = Seats, fill = Party))
-plot3 <- plot3 + geom_bar(stat="identity")
-plot3 <- plot3 + coord_polar(theta="y")
-plot3 <- plot3 + scale_fill_manual(
-    values = c("Blue", "Brown", "Red", "Yellow", "Black", "Orange"))
-plot3 <- plot3 +labs(y = "4cast Seats(inner) / BPI Seats (Outer)")
-plot3 <- plot3 +labs(x = "")
-plot3 <- plot3 + ggtitle("10 APR 15")
-plot3 <- plot3 + theme( axis.text.y=element_blank())
-
 png("4castSeats_BPISeats_PieChart.png", width = 800, height = 400)
-plot3
+Get_Pie_Predicted_BPI_Chart(data_seats,data_BPI,max(data_seats$date))
 dev.off()
+
+
+
+#########################################################################
+# Animated Plot
+
+
+dates <- unique(data_seats$date)
+dates <- dates[order(dates)]
+
+dir.create("Plots")
+
+for (i in 11:100){
+    
+    png(paste("Plots/",as.character(i-1),".png", sep = ""))
+    print(Get_Pie_Predicted_BPI_Chart(data_seats, data_BPI, dates[i]))
+    dev.off()
+}
+
+
+shell(
+    paste("convert -delay",
+          15, 
+          "Plots/*.png",
+          "4castSeats_BPISeats_PieChart_animated.gif",
+          sep = " "))
+
+unlink("Plots", recursive = TRUE) 
+
+
