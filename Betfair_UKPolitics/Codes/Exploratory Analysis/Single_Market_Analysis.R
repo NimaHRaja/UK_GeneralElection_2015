@@ -7,7 +7,7 @@ source("../Functions/Output_GIF_Ternary_Prob_History.R")
 
 # Choose Parameters
 
-output_choice <- 6
+output_choice <- 5
 
 parameters <- read.csv("Single_Market_Analysis_Parameters.csv",
                        stringsAsFactors = FALSE)

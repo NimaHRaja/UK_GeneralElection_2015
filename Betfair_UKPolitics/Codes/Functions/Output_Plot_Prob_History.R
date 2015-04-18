@@ -16,7 +16,7 @@ Output_Plot_Prob_History <- function(market, errorbar)
     data$Prob <- (data$ymax + data$ymin)/2
     
     plot<-
-        ggplot(data = data, aes(x = date , y = Prob, colour = Outcome)) + 
+        ggplot(data = data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
         geom_line() +
         facet_grid(. ~ Market) +
         ylab("(implied) probability (%)")
