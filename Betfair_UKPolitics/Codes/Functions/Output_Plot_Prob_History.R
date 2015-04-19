@@ -7,6 +7,7 @@ Output_Plot_Prob_History <- function(market, errorbar)
 {
     
     data <- all_odds_data[all_odds_data$Market %in% market ,]
+  #  data <- data[data$Outcome %in% c("Ed Miliband", "David Cameron"),]
     
     data <- data[!is.na(data$Outcome),]
     data$ymax <- 1/data$Back
@@ -22,7 +23,7 @@ Output_Plot_Prob_History <- function(market, errorbar)
         ylab("(implied) probability (%)")
     
     if (errorbar)
-        plot <- plot + geom_errorbar(aes(ymin = ymin, ymax = ymax)) 
+        plot <- plot + geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
     
     plot
 }
