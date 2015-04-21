@@ -7,7 +7,7 @@ source("../Functions/Output_GIF_Ternary_Prob_History.R")
 
 # Choose Parameters
 
-output_choice <- 6
+output_choice <- 4
 
 parameters <- read.csv("Single_Market_Analysis_Parameters.csv",
                        stringsAsFactors = FALSE)
@@ -80,7 +80,7 @@ data <- Get_3Way_Odds(data,
                       main_outputs,
                       other_outputs)
 
-png(ternary_snapshot, width = 800, height = 400)
+png(ternary_snapshot, width = 800, height = 800)
 Get_Ternary_Diagram (data, labels, this_market, png_dot_size)
 dev.off()
 
