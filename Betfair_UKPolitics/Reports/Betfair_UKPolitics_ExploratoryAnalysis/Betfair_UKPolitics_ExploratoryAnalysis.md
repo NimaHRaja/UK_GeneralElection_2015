@@ -77,9 +77,8 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 ### (implied) Probability vs. date (Animated GIF)
 
 ![](../../Outputs/Majority Market/Majority_Market_Prob_Animated.gif)
-```
 
-## Market = Overall Majority
+## Market = Most Seats
 
 ### (implied) Probability vs. date
 
@@ -92,6 +91,20 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 ### (implied) Probability vs. date (Animated GIF)
 
 ![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_Animated.gif)
+
+## Market = Next Government
+
+### (implied) Probability vs. date
+
+![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_ErrorbarON.png)
+
+### Current Probabilities
+
+![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_Ternary_Currnet.png)
+
+### (implied) Probability vs. date (Animated GIF)
+
+![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_Animated.gif)
 
 
 
