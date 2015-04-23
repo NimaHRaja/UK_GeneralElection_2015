@@ -7,7 +7,7 @@ Output_Plot_Prob_History <- function(market, errorbar)
 {
     
     data <- all_odds_data[all_odds_data$Market %in% market ,]
-  #  data <- data[data$Outcome %in% c("Ed Miliband", "David Cameron"),]
+    data <- data[data$Outcome %in% c("Ed Miliband", "David Cameron"),]
     
     data <- data[!is.na(data$Outcome),]
     data$ymax <- 1/data$Back
