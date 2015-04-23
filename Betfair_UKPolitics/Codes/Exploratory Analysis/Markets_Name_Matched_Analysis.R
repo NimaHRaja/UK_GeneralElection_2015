@@ -30,7 +30,10 @@ source("../Functions/Load_Data.R")
 
 constituency_Markets_test <-
     grepl('Winner',unique(all_odds_data$Market)) & 
-    !grepl('2016',unique(all_odds_data$Market))
+    !grepl('2016',unique(all_odds_data$Market)) & 
+    !grepl('Leadership',unique(all_odds_data$Market))
+
+
 
 constituency_Markets <- 
     unique(all_odds_data$Market)[constituency_Markets_test]
@@ -97,6 +100,9 @@ data_matched_constituencies <-
 
 row.names(data_matched_constituencies) <- NULL
 
+names(data_matched_constituencies)[2] <- "Matched (£)"
+
+
 # Other Markets
 
 data_matched_other <- 
@@ -110,3 +116,5 @@ data_matched_other <-
         c("Market", "Matched")]
 
 row.names(data_matched_other) <- NULL
+
+names(data_matched_other)[2] <- "Matched (£)"

@@ -9,7 +9,7 @@ source("../Functions/Output_GIF_Ternary_Prob_History.R")
 
 output_choice <- 4
 
-parameters <- read.csv("Single_Market_Analysis_Parameters.csv",
+parameters <- read.csv("../../raw_data/Single_Market_Analysis_Parameters.csv",
                        stringsAsFactors = FALSE)
 
 number_of_diagrams <- parameters[output_choice,15]
