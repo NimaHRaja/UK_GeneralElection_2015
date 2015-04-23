@@ -72,7 +72,7 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 
 ### Current Probabilities
 
-![](../../Outputs/Majority Market/Majority_Market_Prob_Ternary_Currnet.png)
+![](../../Outputs/Majority Market/Majority_Market_Prob_Ternary_Currnet.PNG)
 
 ### (implied) Probability vs. date (Animated GIF)
 
@@ -86,7 +86,7 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 
 ### Current Probabilities
 
-![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_Ternary_Currnet.png)
+![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_Ternary_Currnet.PNG)
 
 ### (implied) Probability vs. date (Animated GIF)
 
@@ -100,12 +100,51 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 
 ### Current Probabilities
 
-![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_Ternary_Currnet.png)
+![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_Ternary_Currnet.PNG)
 
 ### (implied) Probability vs. date (Animated GIF)
 
 ![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_Animated.gif)
 
+
+## Market = Prime Minister After General Election
+
+### (implied) Probability vs. date
+
+![](../../Outputs/PM After Election/PM_AfterElection_Market_Prob_ErrorbarON_Top2.png)
+
+### (implied) Probability vs. date (Animated GIF)
+
+![](../../Outputs/PM After Election/PM_AfterElection_Market_Prob_Animated.gif)
+
+
+## Market = South Thanet
+
+### (implied) Probability vs. date
+
+![](../../Outputs/South Thanet Market/SouthThanet_Market_Prob_ErrorbarOFF.png)
+
+### Current Probabilities
+
+![](../../Outputs/South Thanet Market/SouthThanet_Market_Prob_Ternary_Currnet.PNG)
+
+### (implied) Probability vs. date (Animated GIF)
+
+![](../../Outputs/Majority Market/Majority_Market_Prob_Animated.gif)
+
+## Market = UKIP Seats
+
+### (implied) Probability vs. date
+
+![](../../Outputs/UKIP Seats Market/UKIP_Seats_Market_Prob_ErrorbarON.png)
+
+### Current Probabilities
+
+![](../../Outputs/UKIP Seats Market/UKIP_Seats_Market_Prob_Ternary_Currnet.PNG)
+
+### (implied) Probability vs. date (Animated GIF)
+
+![](../../Outputs/UKIP Seats Market/UKIP_Seats_Market_Prob_Animated.gif)
 
 
 
