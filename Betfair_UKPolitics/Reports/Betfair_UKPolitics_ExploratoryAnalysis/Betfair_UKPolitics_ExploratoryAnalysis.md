@@ -2,6 +2,8 @@
 
 
 
+## Betfair - UK Politics Markets: General
+
 ### Number and Type of Markets
 
 - \# Markets = 731
@@ -9,12 +11,6 @@
 - \# Other Markets = 81
 
 ### Most active Markets
-
-
-```r
-kable(head(data_matched_other,22), format = "markdown")
-```
-
 
 
 |Market                                                           | Matched (Â£)|
@@ -45,12 +41,6 @@ kable(head(data_matched_other,22), format = "markdown")
 ### Most active Constituency Markets
 
 
-```r
-kable(head(data_matched_constituencies,10), format = "markdown")
-```
-
-
-
 |Market                                         | Matched (Â£)|
 |:----------------------------------------------|------------:|
 |South Thanet - Winner                          |        44829|
@@ -64,19 +54,23 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 |Falkirk - Winner                               |         1881|
 |Bristol West - Bristol West - Winner           |         1709|
 
+--- 
+
 ## Market = Overall Majority
 
-### (implied) Probability vs. date
+### Overall Majority: (implied) Probability vs. date
 
 ![](../../Outputs/Majority Market/Majority_Market_Prob_ErrorbarON.png)
 
-### Current Probabilities
+### Overall Majority: Current Probabilities
 
 ![](../../Outputs/Majority Market/Majority_Market_Prob_Ternary_Currnet.PNG)
 
-### (implied) Probability vs. date (Animated GIF)
+### Overall Majority: (implied) Probability vs. date (Animated GIF)
 
 ![](../../Outputs/Majority Market/Majority_Market_Prob_Animated.gif)
+
+---
 
 ## Market = Most Seats
 
@@ -127,10 +121,6 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 ### Current Probabilities
 
 ![](../../Outputs/South Thanet Market/SouthThanet_Market_Prob_Ternary_Currnet.PNG)
-
-### (implied) Probability vs. date (Animated GIF)
-
-![](../../Outputs/Majority Market/Majority_Market_Prob_Animated.gif)
 
 ## Market = UKIP Seats
 

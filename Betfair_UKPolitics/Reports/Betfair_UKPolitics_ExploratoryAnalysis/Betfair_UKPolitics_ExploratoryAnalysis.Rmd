@@ -16,6 +16,8 @@ source("Markets_Name_Matched_Analysis.R")
 setwd(root_dir)
 ```
 
+## Betfair - UK Politics Markets: General
+
 ### Number and Type of Markets
 
 - \# Markets = `r length(unique(all_odds_data$Market))`
@@ -24,29 +26,33 @@ setwd(root_dir)
 
 ### Most active Markets
 
-```{r}
+```{r, echo=FALSE}
 kable(head(data_matched_other,22), format = "markdown")
 ```
 
 ### Most active Constituency Markets
 
-```{r}
+```{r, echo=FALSE}
 kable(head(data_matched_constituencies,10), format = "markdown")
 ```
 
+--- 
+
 ## Market = Overall Majority
 
-### (implied) Probability vs. date
+### Overall Majority: (implied) Probability vs. date
 
 ![](../../Outputs/Majority Market/Majority_Market_Prob_ErrorbarON.png)
 
-### Current Probabilities
+### Overall Majority: Current Probabilities
 
 ![](../../Outputs/Majority Market/Majority_Market_Prob_Ternary_Currnet.PNG)
 
-### (implied) Probability vs. date (Animated GIF)
+### Overall Majority: (implied) Probability vs. date (Animated GIF)
 
 ![](../../Outputs/Majority Market/Majority_Market_Prob_Animated.gif)
+
+---
 
 ## Market = Most Seats
 
