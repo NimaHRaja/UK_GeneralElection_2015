@@ -6,110 +6,64 @@ output:
     toc: yes
 ---
 
-### About
+```{r init, echo=FALSE, warning = FALSE, results='hide'}
+library(xtable);
+library(knitr);
 
-Some Exploratory Analysis of Betfair_UKPolitics_Markets.
-
-```{r, warning = FALSE}
 root_dir <- getwd()
-setwd("./Codes/Exploratory Analysis/")
+setwd("../../Codes/Exploratory Analysis/")
 source("Markets_Name_Matched_Analysis.R")
-# Constituency Markets
-# 
-# major_constituency_markets <- 
-#     subset(data_matched_constituencies, Matched > 1000, Market)
-# 
-# major_constituency_markets_history_plots_withoutErrorbar <-  
-#     apply(major_constituency_markets, 1, function(x) 
-#         Get_Prob_History_Plot(x["Market"],FALSE))
-# 
-# names(major_constituency_markets_history_plots_withoutErrorbar) <- 
-#     major_constituency_markets$Market
-# 
-# major_constituency_markets_history_plots_withErrorbar <-  
-#     apply(major_constituency_markets, 1, function(x) 
-#         Get_Prob_History_Plot(x["Market"],TRUE))
-# 
-# names(major_constituency_markets_history_plots_withErrorbar) <- 
-#     major_constituency_markets$Market
-# 
-# 
-# # Other Markets
-# 
-# 
-# major_other_markets <- 
-#     subset(data_matched_other, Matched > 18000, Market)
-# 
-# major_other_markets_history_plots_withoutErrorbar <-  
-#     apply(major_other_markets, 1, function(x) 
-#         Get_Prob_History_Plot(x["Market"],FALSE))
-# 
-# 
-# names(major_other_markets_history_plots_withoutErrorbar) <- 
-#     major_other_markets$Market
-# 
-# major_other_markets_history_plots_withErrorbar <-  
-#     apply(major_other_markets, 1, function(x) 
-#         Get_Prob_History_Plot(x["Market"],TRUE))
-# 
-# names(major_other_markets_history_plots_withErrorbar) <- 
-#     major_other_markets$Market
-
-
-
-
 setwd(root_dir)
 ```
 
 ### Number and Type of Markets
 
-```{r, echo = FALSE}
-paste("# Markets", length(unique(all_odds_data$Market)), sep = " = ")
-paste("# Constituency Markets", length(constituency_Markets), sep = " = ")
-paste("# Other Markets", length(other_Markets), sep = " = ")
-```
+- \# Markets = `r length(unique(all_odds_data$Market))`
+- \# Constituency Markets = `r length(constituency_Markets)`
+- \# Other Markets = `r length(other_Markets)`
 
-### Constituency Markets
-
-Lots of Constituency Markets are not active yet. Just `r dim(data_matched_constituencies)[1]` (out of `r length(constituency_Markets)`) have non-zero "Matched" value. Those are:
+### Most active Markets
 
 ```{r}
-data_matched_constituencies
+kable(head(data_matched_other,22), format = "markdown")
 ```
 
-Let's take a look at the history of (implied) probability of various outcomes of these constituencies. Here I use $\frac{1}{2}(\frac{1}{BACK}+\frac{1}{Lay})$ as "Probability".
-```{r}
-major_constituency_markets_history_plots_withoutErrorbar
-```
-
-How accurate those numbers are? We also need a measure of "error". Market implies that the probability is something in between $\frac{1}{BACK}$ and $\frac{1}{LAY}$. Let's use those extremes to add errorbars to the graphs:
-```{r}
-major_constituency_markets_history_plots_withErrorbar
-```
-
-Huge errorbars. Markets are not liquid enough (yet). The good news is the most important outcomes have smallish errorbars (like UKIP@South_Thanet or LibDem@Sheffield_hallam). Time to switch to ternary graphs?
-
-### Other Markets
-
-Let's take a look at non-constituency markets:
+### Most active Constituency Markets
 
 ```{r}
-data_matched_other
+kable(head(data_matched_constituencies,10), format = "markdown")
 ```
 
-Let's take a look at the dynamics of the major ones.
+## Market = Overall Majority
 
-```{r}
-major_other_markets_history_plots_withoutErrorbar
-```
+### (implied) Probability vs. date
 
-Same graphs with errorbar:
+![](../../Outputs/Majority Market/Majority_Market_Prob_ErrorbarON.png)
 
-```{r}
-major_other_markets_history_plots_withErrorbar
-```
+### Current Probabilities
 
-# ternary constituencies
+![](../../Outputs/Majority Market/Majority_Market_Prob_Ternary_Currnet.png)
+
+### (implied) Probability vs. date (Animated GIF)
+
+![](../../Outputs/Majority Market/Majority_Market_Prob_Animated.gif)
+
+## Market = Most Seats
+
+### (implied) Probability vs. date
+
+![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_ErrorbarON.png)
+
+### Current Probabilities
+
+![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_Ternary_Currnet.png)
+
+### (implied) Probability vs. date (Animated GIF)
+
+![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_Animated.gif)
+
+
+
 
 
 
