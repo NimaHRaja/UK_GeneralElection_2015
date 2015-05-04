@@ -6,53 +6,53 @@
 
 ### Number and Type of Markets
 
-- \# Markets = 744
+- \# Markets = 747
 - \# Constituency Markets = 650
-- \# Other Markets = 94
+- \# Other Markets = 97
 
 ### Most active Markets
 
 
 |Market                                                           | Matched (Â£)|
 |:----------------------------------------------------------------|------------:|
-|2015 UK General Election - Overall Majority                      |      3531582|
-|2015 UK General Election - Most Seats                            |      2442631|
-|2015 UK General Election - Next Government                       |       415735|
-|2015 UK General Election - Prime Minister After General Election |       319836|
-|UK Seat Totals - UKIP Seats Total                                |       210507|
-|Prime Minister after Cameron - Prime Minister after Cameron      |        91584|
-|Scotland - Most Seats Scotland                                   |        89953|
-|2015 UK General Election - Party Leaders                         |        53855|
-|UK Seat Totals - UKIP U/O 2.5 Seats                              |        48908|
-|UK Seat Totals - UKIP Seats Total 2                              |        44227|
-|England - Most Seats England                                     |        32220|
-|Next Party Leaders - Next Conservative Leader                    |        27253|
-|UK Seat Totals - Conservative Seats Total                        |        24203|
-|UK Seat Totals - UKIP U/O 5.5 Seats                              |        20014|
-|UK Seat Totals - SNP U/O 35.5 Seats                              |        13538|
-|2015 UK General Election - Next Government Coalition Parties     |        12652|
-|UK Seat Totals - Lib Dem Seats Total                             |        11273|
-|Next Party Leaders - Next Liberal Democrat Leader                |        10544|
-|2015 UK General Election - Electoral Bias                        |        10429|
-|Next Party Leaders - Next Labour Leader                          |         9131|
-|UK Seat Totals - SNP U/O 43.5 Seats                              |         7901|
-|2015 General Election - To Win A Seat                            |         7633|
+|2015 UK General Election - Overall Majority                      |      4924173|
+|2015 UK General Election - Most Seats                            |      3034471|
+|2015 UK General Election - Next Government                       |       559450|
+|2015 UK General Election - Prime Minister After General Election |       554821|
+|UK Seat Totals - UKIP Seats Total                                |       234722|
+|Scotland - Most Seats Scotland                                   |       106533|
+|Prime Minister after Cameron - Prime Minister after Cameron      |       103580|
+|2015 UK General Election - Party Leaders                         |        70294|
+|UK Seat Totals - UKIP U/O 2.5 Seats                              |        60421|
+|UK Seat Totals - UKIP Seats Total 2                              |        55953|
+|England - Most Seats England                                     |        48614|
+|UK Seat Totals - Conservative Seats Total                        |        43314|
+|Next Party Leaders - Next Conservative Leader                    |        27591|
+|UK Seat Totals - UKIP U/O 5.5 Seats                              |        26651|
+|2015 General Election - To Win A Seat                            |        23288|
+|2015 UK General Election - Next Government Coalition Parties     |        21757|
+|UK Seat Totals - Lib Dem Seats Total                             |        16676|
+|UK Seat Totals - SNP U/O 35.5 Seats                              |        16675|
+|2015 UK General Election - Electoral Bias                        |        16381|
+|UK Seat Totals - SNP Seats Total                                 |        14962|
+|UK Seat Totals - Labour Seats Total                              |        12217|
+|Next Party Leaders - Next Liberal Democrat Leader                |        10865|
 
 ### Most active Constituency Markets
 
 
-|Market                                         | Matched (Â£)|
-|:----------------------------------------------|------------:|
-|South Thanet - Winner                          |        67590|
-|Brighton Pavilion - Winner                     |        10117|
-|Sheffield Hallam - Winner                      |         8414|
-|Rochester and Strood - Winner                  |         6156|
-|Gordon - Winner                                |         5548|
-|Bristol West - Bristol West - Winner           |         4828|
-|Brighton Kemptown - Brighton Kemptown - Winner |         3779|
-|Cambourne and Redruth - Winner                 |         3546|
-|Castle Point - Castle Point - Winner           |         3062|
-|Thurrock - Winner                              |         2782|
+|Market                                             | Matched (Â£)|
+|:--------------------------------------------------|------------:|
+|South Thanet - Winner                              |        95855|
+|Sheffield Hallam - Winner                          |        14722|
+|Brighton Pavilion - Winner                         |        13215|
+|Rochester and Strood - Winner                      |         8637|
+|Gordon - Winner                                    |         7786|
+|Thurrock - Winner                                  |         7051|
+|Bristol West - Bristol West - Winner               |         6672|
+|Castle Point - Castle Point - Winner               |         5130|
+|Brighton Kemptown - Brighton Kemptown - Winner     |         4894|
+|Na hEileanan an Iar - Na hEileanan an Iar - Winner |         4768|
 
 --- 
 
