@@ -60,15 +60,15 @@
 
 ### Overall Majority: (implied) Probability vs. date
 
-![](graphs/Majority Market/Majority_Market_Prob_ErrorbarON.png)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/Majority Market/Majority_Market_Prob_ErrorbarON.png)
 
 ### Overall Majority: Current Probabilities
 
-![](graphs/Majority Market/Majority_Market_Prob_Ternary_Currnet.PNG)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/Majority Market/Majority_Market_Prob_Ternary_Currnet.PNG)
 
 ### Overall Majority: (implied) Probability vs. date (Animated GIF)
 
-![](graphs/Majority Market/Majority_Market_Prob_Animated.gif)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/Majority Market/Majority_Market_Prob_Animated.gif)
 
 ---
 
@@ -76,15 +76,15 @@
 
 ### Most Seats: (implied) Probability vs. date
 
-![](graphs/Most Seats Market/Most_Seats_Market_Prob_ErrorbarON.png)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/Most Seats Market/Most_Seats_Market_Prob_ErrorbarON.png)
 
 ### Most Seats: Current Probabilities
 
-![](graphs/Most Seats Market/Most_Seats_Market_Prob_Ternary_Currnet.PNG)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/Most Seats Market/Most_Seats_Market_Prob_Ternary_Currnet.PNG)
 
 ### Most Seats: (implied) Probability vs. date (Animated GIF)
 
-![](graphs/Most Seats Market/Most_Seats_Market_Prob_Animated.gif)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/Most Seats Market/Most_Seats_Market_Prob_Animated.gif)
 
 ---
 
@@ -92,15 +92,15 @@
 
 ### Next Government: (implied) Probability vs. date
 
-![](graphs/Next Government Market/NextGovernment_Market_Prob_ErrorbarON.png)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/Next Government Market/NextGovernment_Market_Prob_ErrorbarON.png)
 
 ### Next Government: Current Probabilities
 
-![](graphs/Next Government Market/NextGovernment_Market_Prob_Ternary_Currnet.PNG)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/Next Government Market/NextGovernment_Market_Prob_Ternary_Currnet.PNG)
 
 ### Next Government: (implied) Probability vs. date (Animated GIF)
 
-![](graphs/Next Government Market/NextGovernment_Market_Prob_Animated.gif)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/Next Government Market/NextGovernment_Market_Prob_Animated.gif)
 
 ---
 
@@ -108,11 +108,11 @@
 
 ### Prime Minister After General Election: (implied) Probability vs. date
 
-![](graphs/PM After Election/PM_AfterElection_Market_Prob_ErrorbarON_Top2.png)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/PM After Election/PM_AfterElection_Market_Prob_ErrorbarON_Top2.png)
 
 ### Prime Minister After General Election: (implied) Probability vs. date (Animated GIF)
 
-![](graphs/PM After Election/PM_AfterElection_Market_Prob_Animated.gif)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/PM After Election/PM_AfterElection_Market_Prob_Animated.gif)
 
 ---
 
@@ -120,11 +120,11 @@
 
 ### South Thanet: (implied) Probability vs. date
 
-![](graphs/South Thanet Market/SouthThanet_Market_Prob_ErrorbarOFF.png)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/South Thanet Market/SouthThanet_Market_Prob_ErrorbarOFF.png)
 
 ### South Thanet: Current Probabilities
 
-![](graphs/South Thanet Market/SouthThanet_Market_Prob_Ternary_Currnet.PNG)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/South Thanet Market/SouthThanet_Market_Prob_Ternary_Currnet.PNG)
 
 ---
 
@@ -132,15 +132,15 @@
 
 ### UKIP Seats: (implied) Probability vs. date
 
-![](graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_ErrorbarON.png)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_ErrorbarON.png)
 
 ### UKIP Seats: Current Probabilities
 
-![](graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_Ternary_Currnet.PNG)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_Ternary_Currnet.PNG)
 
 ### UKIP Seats: (implied) Probability vs. date (Animated GIF)
 
-![](graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_Animated.gif)
+![](https://github.com/NimaHRaja/UK_GeneralElection_2015/blob/master/Betfair_UKPolitics/Reports/Betfair_UKPolitics_ExploratoryAnalysis/Graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_Animated.gif)
 
 
 
