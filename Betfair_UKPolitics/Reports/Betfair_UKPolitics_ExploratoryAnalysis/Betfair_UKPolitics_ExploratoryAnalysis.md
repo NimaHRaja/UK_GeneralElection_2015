@@ -112,7 +112,7 @@
 
 ### Prime Minister After General Election: (implied) Probability vs. date (Animated GIF)
 
-![](graphs/PM After Election/PM_AfterElection_Market_Prob_Animated.gif)
+![](/graphs/PM After Election/PM_AfterElection_Market_Prob_Animated.gif)
 
 ---
 
