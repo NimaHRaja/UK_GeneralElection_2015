@@ -42,15 +42,15 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 
 ### Overall Majority: (implied) Probability vs. date
 
-![](../../Outputs/Majority Market/Majority_Market_Prob_ErrorbarON.png)
+![](graphs/Majority Market/Majority_Market_Prob_ErrorbarON.png)
 
 ### Overall Majority: Current Probabilities
 
-![](../../Outputs/Majority Market/Majority_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/Majority Market/Majority_Market_Prob_Ternary_Currnet.PNG)
 
 ### Overall Majority: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/Majority Market/Majority_Market_Prob_Animated.gif)
+![](graphs/Majority Market/Majority_Market_Prob_Animated.gif)
 
 ---
 
@@ -58,15 +58,15 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 
 ### Most Seats: (implied) Probability vs. date
 
-![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_ErrorbarON.png)
+![](graphs/Most Seats Market/Most_Seats_Market_Prob_ErrorbarON.png)
 
 ### Most Seats: Current Probabilities
 
-![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/Most Seats Market/Most_Seats_Market_Prob_Ternary_Currnet.PNG)
 
 ### Most Seats: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_Animated.gif)
+![](graphs/Most Seats Market/Most_Seats_Market_Prob_Animated.gif)
 
 ---
 
@@ -74,15 +74,15 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 
 ### Next Government: (implied) Probability vs. date
 
-![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_ErrorbarON.png)
+![](graphs/Next Government Market/NextGovernment_Market_Prob_ErrorbarON.png)
 
 ### Next Government: Current Probabilities
 
-![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/Next Government Market/NextGovernment_Market_Prob_Ternary_Currnet.PNG)
 
 ### Next Government: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_Animated.gif)
+![](graphs/Next Government Market/NextGovernment_Market_Prob_Animated.gif)
 
 ---
 
@@ -90,11 +90,11 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 
 ### Prime Minister After General Election: (implied) Probability vs. date
 
-![](../../Outputs/PM After Election/PM_AfterElection_Market_Prob_ErrorbarON_Top2.png)
+![](graphs/PM After Election/PM_AfterElection_Market_Prob_ErrorbarON_Top2.png)
 
 ### Prime Minister After General Election: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/PM After Election/PM_AfterElection_Market_Prob_Animated.gif)
+![](graphs/PM After Election/PM_AfterElection_Market_Prob_Animated.gif)
 
 ---
 
@@ -102,11 +102,11 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 
 ### South Thanet: (implied) Probability vs. date
 
-![](../../Outputs/South Thanet Market/SouthThanet_Market_Prob_ErrorbarOFF.png)
+![](graphs/South Thanet Market/SouthThanet_Market_Prob_ErrorbarOFF.png)
 
 ### South Thanet: Current Probabilities
 
-![](../../Outputs/South Thanet Market/SouthThanet_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/South Thanet Market/SouthThanet_Market_Prob_Ternary_Currnet.PNG)
 
 ---
 
@@ -114,15 +114,15 @@ kable(head(data_matched_constituencies,10), format = "markdown")
 
 ### UKIP Seats: (implied) Probability vs. date
 
-![](../../Outputs/UKIP Seats Market/UKIP_Seats_Market_Prob_ErrorbarON.png)
+![](graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_ErrorbarON.png)
 
 ### UKIP Seats: Current Probabilities
 
-![](../../Outputs/UKIP Seats Market/UKIP_Seats_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_Ternary_Currnet.PNG)
 
 ### UKIP Seats: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/UKIP Seats Market/UKIP_Seats_Market_Prob_Animated.gif)
+![](graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_Animated.gif)
 
 
 

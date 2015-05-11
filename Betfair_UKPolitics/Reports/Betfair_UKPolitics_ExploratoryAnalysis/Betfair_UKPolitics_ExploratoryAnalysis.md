@@ -6,53 +6,53 @@
 
 ### Number and Type of Markets
 
-- \# Markets = 747
+- \# Markets = 749
 - \# Constituency Markets = 650
-- \# Other Markets = 97
+- \# Other Markets = 99
 
 ### Most active Markets
 
 
 |Market                                                           | Matched (Â£)|
 |:----------------------------------------------------------------|------------:|
-|2015 UK General Election - Overall Majority                      |      4924173|
-|2015 UK General Election - Most Seats                            |      3034471|
-|2015 UK General Election - Next Government                       |       559450|
-|2015 UK General Election - Prime Minister After General Election |       554821|
-|UK Seat Totals - UKIP Seats Total                                |       234722|
-|Scotland - Most Seats Scotland                                   |       106533|
-|Prime Minister after Cameron - Prime Minister after Cameron      |       103580|
-|2015 UK General Election - Party Leaders                         |        70294|
-|UK Seat Totals - UKIP U/O 2.5 Seats                              |        60421|
-|UK Seat Totals - UKIP Seats Total 2                              |        55953|
-|England - Most Seats England                                     |        48614|
-|UK Seat Totals - Conservative Seats Total                        |        43314|
-|Next Party Leaders - Next Conservative Leader                    |        27591|
-|UK Seat Totals - UKIP U/O 5.5 Seats                              |        26651|
-|2015 General Election - To Win A Seat                            |        23288|
-|2015 UK General Election - Next Government Coalition Parties     |        21757|
-|UK Seat Totals - Lib Dem Seats Total                             |        16676|
-|UK Seat Totals - SNP U/O 35.5 Seats                              |        16675|
-|2015 UK General Election - Electoral Bias                        |        16381|
-|UK Seat Totals - SNP Seats Total                                 |        14962|
-|UK Seat Totals - Labour Seats Total                              |        12217|
-|Next Party Leaders - Next Liberal Democrat Leader                |        10865|
+|2015 UK General Election - Overall Majority                      |      5302402|
+|2015 UK General Election - Most Seats                            |      3102711|
+|2015 UK General Election - Next Government                       |       585041|
+|2015 UK General Election - Prime Minister After General Election |       578778|
+|UK Seat Totals - UKIP Seats Total                                |       236941|
+|Scotland - Most Seats Scotland                                   |       108674|
+|Prime Minister after Cameron - Prime Minister after Cameron      |       105109|
+|2015 UK General Election - Party Leaders                         |        70322|
+|UK Seat Totals - UKIP U/O 2.5 Seats                              |        61318|
+|UK Seat Totals - UKIP Seats Total 2                              |        58223|
+|England - Most Seats England                                     |        48705|
+|UK Seat Totals - Conservative Seats Total                        |        46690|
+|2015 General Election - To Win A Seat                            |        29271|
+|Next Party Leaders - Next Conservative Leader                    |        27707|
+|UK Seat Totals - UKIP U/O 5.5 Seats                              |        27232|
+|2015 UK General Election - Next Government Coalition Parties     |        22550|
+|UK Seat Totals - Lib Dem Seats Total                             |        17760|
+|2015 UK General Election - Electoral Bias                        |        17394|
+|UK Seat Totals - SNP U/O 35.5 Seats                              |        16800|
+|UK Seat Totals - SNP Seats Total                                 |        16296|
+|UK Seat Totals - Labour Seats Total                              |        12690|
+|UK Seat Totals - SNP U/O 43.5 Seats                              |        11632|
 
 ### Most active Constituency Markets
 
 
-|Market                                             | Matched (Â£)|
-|:--------------------------------------------------|------------:|
-|South Thanet - Winner                              |        95855|
-|Sheffield Hallam - Winner                          |        14722|
-|Brighton Pavilion - Winner                         |        13215|
-|Rochester and Strood - Winner                      |         8637|
-|Gordon - Winner                                    |         7786|
-|Thurrock - Winner                                  |         7051|
-|Bristol West - Bristol West - Winner               |         6672|
-|Castle Point - Castle Point - Winner               |         5130|
-|Brighton Kemptown - Brighton Kemptown - Winner     |         4894|
-|Na hEileanan an Iar - Na hEileanan an Iar - Winner |         4768|
+|Market                                                                   | Matched (Â£)|
+|:------------------------------------------------------------------------|------------:|
+|South Thanet - Winner                                                    |       100044|
+|Sheffield Hallam - Winner                                                |        19392|
+|Brighton Pavilion - Winner                                               |        13424|
+|Thurrock - Winner                                                        |         9574|
+|Bristol West - Bristol West - Winner                                     |         8953|
+|Rochester and Strood - Winner                                            |         8749|
+|Gordon - Winner                                                          |         8388|
+|Glasgow Central - Winner                                                 |         5236|
+|Castle Point - Castle Point - Winner                                     |         5226|
+|Paisley and Renfrewshire South - Paisley and Renfrewshire South - Winner |         5059|
 
 --- 
 
@@ -60,15 +60,15 @@
 
 ### Overall Majority: (implied) Probability vs. date
 
-![](../../Outputs/Majority Market/Majority_Market_Prob_ErrorbarON.png)
+![](graphs/Majority Market/Majority_Market_Prob_ErrorbarON.png)
 
 ### Overall Majority: Current Probabilities
 
-![](../../Outputs/Majority Market/Majority_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/Majority Market/Majority_Market_Prob_Ternary_Currnet.PNG)
 
 ### Overall Majority: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/Majority Market/Majority_Market_Prob_Animated.gif)
+![](graphs/Majority Market/Majority_Market_Prob_Animated.gif)
 
 ---
 
@@ -76,15 +76,15 @@
 
 ### Most Seats: (implied) Probability vs. date
 
-![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_ErrorbarON.png)
+![](graphs/Most Seats Market/Most_Seats_Market_Prob_ErrorbarON.png)
 
 ### Most Seats: Current Probabilities
 
-![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/Most Seats Market/Most_Seats_Market_Prob_Ternary_Currnet.PNG)
 
 ### Most Seats: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/Most Seats Market/Most_Seats_Market_Prob_Animated.gif)
+![](graphs/Most Seats Market/Most_Seats_Market_Prob_Animated.gif)
 
 ---
 
@@ -92,15 +92,15 @@
 
 ### Next Government: (implied) Probability vs. date
 
-![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_ErrorbarON.png)
+![](graphs/Next Government Market/NextGovernment_Market_Prob_ErrorbarON.png)
 
 ### Next Government: Current Probabilities
 
-![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/Next Government Market/NextGovernment_Market_Prob_Ternary_Currnet.PNG)
 
 ### Next Government: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/Next Government Market/NextGovernment_Market_Prob_Animated.gif)
+![](graphs/Next Government Market/NextGovernment_Market_Prob_Animated.gif)
 
 ---
 
@@ -108,11 +108,11 @@
 
 ### Prime Minister After General Election: (implied) Probability vs. date
 
-![](../../Outputs/PM After Election/PM_AfterElection_Market_Prob_ErrorbarON_Top2.png)
+![](graphs/PM After Election/PM_AfterElection_Market_Prob_ErrorbarON_Top2.png)
 
 ### Prime Minister After General Election: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/PM After Election/PM_AfterElection_Market_Prob_Animated.gif)
+![](graphs/PM After Election/PM_AfterElection_Market_Prob_Animated.gif)
 
 ---
 
@@ -120,11 +120,11 @@
 
 ### South Thanet: (implied) Probability vs. date
 
-![](../../Outputs/South Thanet Market/SouthThanet_Market_Prob_ErrorbarOFF.png)
+![](graphs/South Thanet Market/SouthThanet_Market_Prob_ErrorbarOFF.png)
 
 ### South Thanet: Current Probabilities
 
-![](../../Outputs/South Thanet Market/SouthThanet_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/South Thanet Market/SouthThanet_Market_Prob_Ternary_Currnet.PNG)
 
 ---
 
@@ -132,15 +132,15 @@
 
 ### UKIP Seats: (implied) Probability vs. date
 
-![](../../Outputs/UKIP Seats Market/UKIP_Seats_Market_Prob_ErrorbarON.png)
+![](graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_ErrorbarON.png)
 
 ### UKIP Seats: Current Probabilities
 
-![](../../Outputs/UKIP Seats Market/UKIP_Seats_Market_Prob_Ternary_Currnet.PNG)
+![](graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_Ternary_Currnet.PNG)
 
 ### UKIP Seats: (implied) Probability vs. date (Animated GIF)
 
-![](../../Outputs/UKIP Seats Market/UKIP_Seats_Market_Prob_Animated.gif)
+![](graphs/UKIP Seats Market/UKIP_Seats_Market_Prob_Animated.gif)
 
 
 
