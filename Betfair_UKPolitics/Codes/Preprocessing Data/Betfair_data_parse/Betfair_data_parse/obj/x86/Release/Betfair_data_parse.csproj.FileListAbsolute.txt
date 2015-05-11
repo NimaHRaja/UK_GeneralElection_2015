@@ -1,2 +1,0 @@
-C:\Personal\Projects\Github_NimaHRaja\UK_GeneralElection_2015\Betfair_UKPolitics\Codes\Preprocessing Data\Betfair_data_parse\Betfair_data_parse\obj\x86\Release\Betfair_data_parse.exe
-C:\Personal\Projects\Github_NimaHRaja\UK_GeneralElection_2015\Betfair_UKPolitics\Codes\Preprocessing Data\Betfair_data_parse\Betfair_data_parse\obj\x86\Release\Betfair_data_parse.pdb
