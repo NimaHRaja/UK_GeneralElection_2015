@@ -1,0 +1,438 @@
+---
+title: "07May_Report"
+output:
+  html_document:
+    keep_md: yes
+    toc: yes
+---
+## Prime Minister After General Election
+```{r, echo=FALSE,warning=FALSE}
+library(ggplot2)
+data <- read.table(
+    "../../Betfair_UKPolitics_Odds_History.csv", 
+    sep = ",",header = TRUE, stringsAsFactor = FALSE)
+
+data$date <- 
+    strptime(data$date_char, "%d/%m/%Y %H:%M:%s")
+```
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "2015 UK General Election - Prime Minister After General Election",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[local_data$Outcome %in% c("David Cameron", "Ed Miliband"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Next Government
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "2015 UK General Election - Next Government",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## South Thanet
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "South Thanet - Winner",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## UKIP Seats Total
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - UKIP Seats Total",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Overall Majority
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "2015 UK General Election - Overall Majority",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Most Seats
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "2015 UK General Election - Most Seats",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## UKIP Under/Over 2.5 Seats
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - UKIP U/O 2.5 Seats",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## UKIP Seats 2
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - UKIP Seats Total 2",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Conservative Seats
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - Conservative Seats Total",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Lib Dem Seats
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - Lib Dem Seats Total",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Electoral Bias
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "2015 UK General Election - Electoral Bias",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Labour Seats
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - Labour Seats Total",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Voter Turnout
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "2015 General Election - Registered Voter Turnout",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Two General Elections 2015?
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "2015 UK General Election - Two General Elections 2015??",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Conservative Under/Over 278.5 Seats
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - Conservative U/O 278.5 Seats",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## SNP Seats 
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - SNP Seats Total 2",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## LibDem Seats Under/Over 32.5 Seats
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - Lib Dem U/O 32.5 Seats",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Conservative Seats Under/Over 287.5 Seats
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "UK Seat Totals - Conservative U/O 287.5 Seats",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+## Labour Seats Scotland
+```{r,echo=FALSE}
+local_data <- 
+    data[data$Market == "Scotland - Labour Seats Scotland",]
+
+local_data <- local_data[local_data$date > strptime("2015-05-07", format = "%Y-%m-%d"),]
+
+local_data <- local_data[!is.na(local_data$Outcome),]
+local_data$ymax <- 1/local_data$Back
+local_data$ymin <- 1/local_data$Lay
+local_data[is.na(local_data$ymax),"ymax"] <- 1 
+local_data[is.na(local_data$ymin),"ymin"] <- 0
+local_data$Prob <- (local_data$ymax + local_data$ymin)/2
+
+
+ggplot(data = local_data, aes(x = date , y = Prob * 100, colour = Outcome)) + 
+    geom_line() +
+    facet_grid(. ~ Market) +
+    ylab("(implied) probability (%)") +
+    geom_errorbar(aes(ymin = ymin * 100, ymax = ymax * 100)) 
+```
+
+
+
