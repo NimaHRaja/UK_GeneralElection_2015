@@ -7,7 +7,7 @@ source("../Functions/Output_GIF_Ternary_Prob_History.R")
 
 # Choose Parameters
 
-output_choice <- 6
+output_choice <- 1
 
 parameters <- read.csv("../../raw_data/Single_Market_Analysis_Parameters.csv",
                        stringsAsFactors = FALSE)
@@ -24,10 +24,10 @@ last_date <-strptime(last_date, "%Y-%m-%d %H:%M:%s")
 
 this_market <- parameters[output_choice,1]
 
-csv_output_file <- paste(parameters[output_choice,19], parameters[output_choice,2], sep = "")
-png_output_file_1 <- paste(parameters[output_choice,19], parameters[output_choice,3], sep = "")
-png_output_file_2 <- paste(parameters[output_choice,19], parameters[output_choice,4], sep = "")
-ternary_snapshot <- paste(parameters[output_choice,19], parameters[output_choice,5], sep = "")
+csv_output_file <- parameters[output_choice,2]
+png_output_file_1 <- parameters[output_choice,3]
+png_output_file_2 <- parameters[output_choice,4]
+ternary_snapshot <- parameters[output_choice,5]
 gif_output_file <- parameters[output_choice,6]
 
 main_outputs <- list(parameters[output_choice,7],parameters[output_choice,8]); 
@@ -101,5 +101,5 @@ meta <- data.frame(
     last_date = last_date)
 
 write.table(meta, 
-            paste(parameters[output_choice,19], "meta.txt", sep = ""), 
+            "meta.txt", 
             row.names = FALSE)

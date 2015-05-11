@@ -1,0 +1,2 @@
+"time" "number_of_diagrams" "delay" "first_date" "last_date"
+"2015-05-11 16:05:15" 200 5 2014-07-01 2015-05-30
